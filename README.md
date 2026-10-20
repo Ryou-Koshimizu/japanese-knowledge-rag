@@ -39,7 +39,7 @@
 | 実AI×実ブラウザの通し確認 | 14/14 件 | Chromium と WebKit で画面から7種類の質問を入力し、回答・根拠・文書の表示まで確認 |
 <!-- summary:end -->
 
-測定の詳細は [検証記録](docs/verification.md)、生の記録は [docs/evidence](docs/evidence)。
+本番の回答AIは Claude API（既定 `claude-sonnet-5-5`）です。測定は、同じ指示文・同じ出力の形（構造化出力）で、ChatGPT の Codex CLI（gpt-6.1-sol）を差し替え先にして行いました。測定の詳細と測り直しの記録は [検証記録](docs/verification.md)、生の記録は [docs/evidence](docs/evidence)。
 
 ## 試す
 
