@@ -259,7 +259,13 @@ button, input { font: inherit; color: inherit; }
 /* ── 回答（雑誌の段組み） ───────────────────────── */
 .reading { padding: clamp(28px, 6vw, 88px) var(--gutter); scroll-margin-top: var(--header); }
 .ink { display: grid; justify-items: center; gap: 4px; padding: 24px 0 48px; }
-.ink-svg { width: 140px; height: 140px; }
+.ink-svg { width: 180px; height: 180px; }
+.ink-stroke { width: 240px; height: 16px; margin-top: -18px; }
+.ink-stroke path {
+  fill: none; stroke: var(--ink); stroke-width: 2.4; stroke-linecap: round;
+  stroke-dasharray: 260; stroke-dashoffset: 260; animation: stroke 1.6s var(--ease-out) infinite;
+}
+@keyframes stroke { 60% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
 .ink-drop { fill: var(--ink); transform-box: fill-box; transform-origin: center; animation: drop 2.4s var(--ease-out) infinite; }
 .ink-drop.d2 { animation-delay: .35s; fill: var(--ink-2); }
 .ink-drop.d3 { animation-delay: .7s; fill: var(--vermilion); }
@@ -383,6 +389,8 @@ button, input { font: inherit; color: inherit; }
   background: var(--sheet); border: 1px solid var(--ink); box-shadow: 4px 4px 0 var(--ink);
 }
 .notice p { margin: 0; }
+.notice-suggest { margin-top: 10px; flex-wrap: wrap; mask-image: none; }
+.doc-section mark { color: inherit; background: var(--marker); }
 .notice .icon { margin-top: .35em; color: var(--vermilion); }
 .notice-title { font-weight: 700; }
 

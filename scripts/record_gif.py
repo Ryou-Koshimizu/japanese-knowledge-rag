@@ -9,16 +9,17 @@
 from __future__ import annotations
 
 import io
+import itertools
 import time
 from pathlib import Path
 
 from PIL import Image
-from playwright.sync_api import Page, sync_playwright
+from playwright.sync_api import Page, ViewportSize, sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "docs" / "assets"
 BASE = "http://127.0.0.1:8104"
-SIZE = {"width": 1100, "height": 690}
+SIZE: ViewportSize = {"width": 1100, "height": 690}
 OUT_WIDTH = 880
 LEAVE = "使わなかった有給って次の年に持ち越せますか？最大で何日まで持てますか？"
 
@@ -39,7 +40,7 @@ class Recorder:
 
     def save(self, path: Path) -> None:
         durations = [
-            max(40, round((b[0] - a[0]) * 1000)) for a, b in zip(self.frames, self.frames[1:])
+            max(40, round((b[0] - a[0]) * 1000)) for a, b in itertools.pairwise(self.frames)
         ]
         durations.append(1800)
         images = [f[1].quantize(colors=128, method=Image.Quantize.MEDIANCUT) for f in self.frames]
@@ -80,10 +81,12 @@ def main() -> None:
         browser.close()
 
     with sync_playwright() as p:
-        for engine, viewport, name in (
-            (p.chromium, {"width": 1440, "height": 900}, "answer-desktop.png"),
-            (p.webkit, {"width": 390, "height": 844}, "answer-mobile.png"),
-        ):
+        shots: list[tuple[str, ViewportSize, str]] = [
+            ("chromium", {"width": 1440, "height": 900}, "answer-desktop.png"),
+            ("webkit", {"width": 390, "height": 844}, "answer-mobile.png"),
+        ]
+        for engine_name, viewport, name in shots:
+            engine = getattr(p, engine_name)
             browser = engine.launch()
             page = browser.new_page(viewport=viewport, device_scale_factor=2, locale="ja-JP")
             page.goto(BASE + "/")

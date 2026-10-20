@@ -8,7 +8,7 @@ from pathlib import Path
 from .answer import AnswerService
 from .embeddings import Embedder, HashingEmbedder
 from .ingest import IngestReport, ingest_directory
-from .providers import Answerer, ReplayAnswerer
+from .providers import Answerer
 from .search import Glossary, Searcher
 from .store import Store
 
@@ -34,7 +34,3 @@ def build_engine(
     report = ingest_directory(store, corpus_dir, embedder)
     searcher = Searcher(store, embedder, Glossary.load(corpus_dir / "_glossary.yaml"))
     return Engine(store, searcher, AnswerService(store, searcher, answerer), report)
-
-
-def replay_answerer(path: Path) -> ReplayAnswerer:
-    return ReplayAnswerer(path)

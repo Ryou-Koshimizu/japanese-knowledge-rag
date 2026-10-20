@@ -57,3 +57,18 @@ def corpus_copy(tmp_path: Path) -> Path:
     target = tmp_path / "corpus"
     shutil.copytree(CORPUS, target)
     return target
+
+
+_skipped: list[str] = []
+
+
+def pytest_runtest_logreport(report: pytest.TestReport) -> None:
+    if report.skipped:
+        _skipped.append(report.nodeid)
+
+
+def pytest_sessionfinish(session: pytest.Session, exitstatus: int) -> None:
+    """全件試験では飛ばし（skip）を1件も認めない。"""
+    if _skipped:
+        print(f"\n飛ばした試験があります: {_skipped}")
+        session.exitstatus = 1

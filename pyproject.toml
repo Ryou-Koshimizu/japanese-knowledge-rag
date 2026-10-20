@@ -68,7 +68,7 @@ ignore = [
 [tool.mypy]
 python_version = "3.12"
 strict = true
-files = ["src", "tests", "scripts"]
+files = ["src", "tests", "scripts", "api"]
 mypy_path = "src"
 
 [[tool.mypy.overrides]]

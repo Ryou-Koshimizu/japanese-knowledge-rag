@@ -8,7 +8,12 @@ from playwright.sync_api import Page, expect
 
 pytestmark = pytest.mark.e2e
 
-WCAG = {"runOnly": {"type": "tag", "values": ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]}}
+LEAVE = "使わなかった有給って次の年に持ち越せますか？最大で何日まで持てますか？"
+# preload を止めるのは、axe が自分で <style> を差し込み、画面の CSP に止められるのを避けるため
+WCAG = {
+    "runOnly": {"type": "tag", "values": ["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"]},
+    "preload": False,
+}
 
 
 def axe_violations(page: Page) -> list[str]:
@@ -119,7 +124,8 @@ def test_mobile_flow(browser, server: str) -> None:  # type: ignore[no-untyped-d
     page = context.new_page()
     try:
         open_home(page, server)
-        page.locator(".chip").first.tap()
+        page.fill("#question", LEAVE)
+        page.locator(".ask-submit").tap()
         expect(page.locator("#answer")).to_be_visible(timeout=10_000)
         page.wait_for_timeout(2_200)
         overflow = page.evaluate("document.documentElement.scrollWidth - window.innerWidth")

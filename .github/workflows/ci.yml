@@ -9,6 +9,7 @@ concurrency:
   cancel-in-progress: true
 env:
   UV_VERSION: "0.13.3"
+  FASTEMBED_CACHE_PATH: /home/runner/.cache/fastembed
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -26,21 +27,21 @@ jobs:
         run: python -m pip install "uv==${UV_VERSION}"
       - name: 依存を入れる（ロックファイルどおり）
         run: uv sync --frozen --extra local
+      - name: 公開デモ用の requirements.txt がロックファイルと一致するか
+        run: uv export --no-dev --no-hashes --no-emit-project --format requirements-txt -q | diff - requirements.txt
       - name: 書式と静的検査
         run: |
           uv run ruff format --check
           uv run ruff check
           uv run mypy
       - name: 埋め込みモデルのキャッシュ
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: ~/.cache/fastembed
-          key: fastembed-paraphrase-multilingual-MiniLM-L12-v2
+          path: /home/runner/.cache/fastembed
+          key: fastembed-paraphrase-multilingual-MiniLM-L12-v2-v1
       - name: ブラウザ（Chromium と WebKit）
         run: uv run playwright install --with-deps chromium webkit
       - name: 全件試験（単体・実DB・実ブラウザ・axe・全画面サイズ）
-        env:
-          FASTEMBED_CACHE_PATH: ~/.cache/fastembed
         run: uv run pytest
       - name: 検索の評価（AIなし）
-        run: uv run python scripts/evaluate.py retrieval --embedders hashing
+        run: uv run python scripts/evaluate.py retrieval

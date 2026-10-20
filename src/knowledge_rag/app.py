@@ -37,7 +37,8 @@ SUMMARY_PATH = ROOT / "docs" / "evidence" / "summary.json"
 
 CSP = (
     "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; "
-    "font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; "
+    "font-src https://fonts.gstatic.com; img-src 'self' data:; "
+    "connect-src 'self'; "
     "object-src 'none'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'"
 )
 
@@ -191,7 +192,7 @@ def create_app(settings: Settings | None = None, engine: Engine | None = None) -
         return {"hits": [hit_json(h) for h in hits]}
 
     @app.post("/api/ask")
-    def ask(body: AskBody, who: Who, request: Request) -> dict[str, Any]:
+    def ask(body: AskBody, who: Who) -> dict[str, Any]:
         if settings.mode == "live":
             limiter.check(who.id)
         try:

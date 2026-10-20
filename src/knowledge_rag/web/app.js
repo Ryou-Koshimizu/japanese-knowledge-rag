@@ -20,7 +20,7 @@
       if (value === undefined || value === null || value === false) continue;
       if (key === "class") node.className = value;
       else if (key === "text") node.textContent = value;
-      else if (key === "style") node.style.cssText = value; // CSP 下でも効く CSSOM で設定
+      else if (key === "delay") node.style.animationDelay = `${value}ms`; // CSSOM のプロパティで設定（CSP で許される）
       else if (key.startsWith("on")) node.addEventListener(key.slice(2), value);
       else node.setAttribute(key, value === true ? "" : String(value));
     }
@@ -209,7 +209,7 @@
   }
 
   function renderNotRecorded(result) {
-    const suggestions = el("ul", { class: "suggest-list", style: "margin-top:10px;flex-wrap:wrap;mask-image:none" },
+    const suggestions = el("ul", { class: "suggest-list notice-suggest" },
       ...(result.suggestions || []).slice(0, 6).map((q) =>
         el("li", {}, el("button", { class: "chip", type: "button", text: q, onclick: () => ask(q) }))));
     $("#reading").prepend(notice(
@@ -262,7 +262,7 @@
         const n = cite[1];
         const button = el("button", {
           class: "cite ch", type: "button", "aria-label": `根拠 ${n} を見る`, text: n,
-          style: `animation-delay:${index * step}ms`,
+          delay: index * step,
           onclick: () => focusSource(n),
         });
         paragraph.append(button);
@@ -297,7 +297,7 @@
     let order = 0;
     for (const group of groups.values()) {
       const quotes = group.quotes.map((q) => el("p", { class: "source-quote" }, "「", el("mark", { text: q }), "」"));
-      const card = el("li", { class: "source", id: `source-${group.number}`, style: `animation-delay:${200 + order * 140}ms` },
+      const card = el("li", { class: "source", id: `source-${group.number}`, delay: 200 + order * 140 },
         el("span", { class: "source-num", "aria-hidden": "true", text: group.number }),
         el("p", { class: "source-doc" }, el("span", { class: "sr-only", text: `根拠 ${group.number}：` }), group.doc_title),
         el("p", { class: "source-heading", text: group.heading }),
@@ -336,7 +336,7 @@
         const r = hit.ranks[key];
         return el("li", { class: r === 1 ? "top" : "" , text: `${label} ${r ? `${r}位` : "—"}` });
       });
-      list.append(el("li", { class: "hit", style: `animation-delay:${i * 50}ms` },
+      list.append(el("li", { class: "hit", delay: i * 50 },
         el("span", { class: "hit-rank", "aria-hidden": "true", text: i + 1 }),
         el("div", {},
           el("p", { class: "hit-title" },
@@ -400,10 +400,6 @@
       rest = rest.slice(at + quote.length);
     }
     node.append(rest);
-    node.querySelectorAll("mark").forEach((m) => {
-      m.style.background = "var(--marker)";
-      m.style.color = "inherit";
-    });
   }
 
   function closeSheet() {
