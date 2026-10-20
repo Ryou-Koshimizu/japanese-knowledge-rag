@@ -161,8 +161,8 @@ button, input { font: inherit; color: inherit; }
 .headline {
   margin: 0;
   font-family: var(--serif); font-weight: 800;
-  /* 2行目「出典で答える。」の7文字が欄の幅に収まり、背の低い画面でも高さに収まる大きさ */
-  font-size: clamp(22px, min(12.6cqi, 15svh), 210px);
+  /* 1行（全角11文字ほど）が欄の幅に収まり、背の低い画面でも高さに収まる大きさ */
+  font-size: clamp(16px, min(7.8cqi, 13svh), 160px);
   white-space: nowrap;
   line-height: 1.12; letter-spacing: .02em;
   font-feature-settings: "palt" 1;
@@ -487,7 +487,7 @@ button, input { font: inherit; color: inherit; }
 @media (max-height: 520px) and (min-aspect-ratio: 4/3) {
   .hero-inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); column-gap: 28px; align-items: end; max-width: none; width: 100%; }
   .kicker { grid-column: 1; }
-  .headline { grid-column: 1; grid-row: 2 / span 3; font-size: clamp(20px, min(5.8cqi, 15svh), 80px); }
+  .headline { grid-column: 1; grid-row: 2 / span 3; font-size: clamp(16px, min(3.6cqi, 13svh), 60px); }
   .deck { grid-column: 2; grid-row: 2; margin-top: 0; }
   .ask { grid-column: 2; grid-row: 3; margin-top: 8px; }
   .suggest { grid-column: 2; grid-row: 4; margin-top: 6px; }

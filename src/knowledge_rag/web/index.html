@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>索引室 — 社内規程に、出典つきで答える</title>
+<title>索引室 — 社内規程の質問に、条文を引用して答えるAI</title>
 <meta name="description" content="社内規程・マニュアルを日本語のハイブリッド検索で引き、該当箇所を引用して答える社内ナレッジ検索AI（RAG）。部署・役職ごとに読める文書を検索の段階で分けます。">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#f3ecdf">
@@ -39,12 +39,12 @@
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-grain" aria-hidden="true"></div>
     <div class="hero-inner">
-      <p class="kicker reveal"><span class="kicker-rule" aria-hidden="true"></span>社内規程・マニュアルの問答</p>
+      <p class="kicker reveal"><span class="kicker-rule" aria-hidden="true"></span>社内ナレッジ検索AI（RAG）</p>
       <h1 id="hero-title" class="headline">
-        <span class="line"><span class="line-inner">規程に聞く。</span></span>
-        <span class="line"><span class="line-inner">出典で<em>答える</em>。</span></span>
+        <span class="line"><span class="line-inner">社内規程の質問に、AIが</span></span>
+        <span class="line"><span class="line-inner"><em>条文を引用して</em>答える。</span></span>
       </h1>
-      <p class="deck reveal">架空の会社の規程<span id="deck-docs">32</span>篇から該当の条文を引き、引用つきで答えます。書かれていないことには「記載がありません」と答えます。</p>
+      <p class="deck reveal">架空の会社の規程<span id="deck-docs">32</span>篇から該当の条文を探して引用し、書かれていないことには「記載がありません」と答えます。読めない部署・役職の文書は検索しません。</p>
       <form class="ask reveal" id="ask" role="search" autocomplete="off">
         <label class="sr-only" for="question">規程について質問する</label>
         <svg class="icon ask-icon" aria-hidden="true"><use href="/static/icons.svg#i-search"/></svg>
@@ -118,7 +118,7 @@
   <section class="colophon" aria-labelledby="colophon-title">
     <div class="colophon-head">
       <p class="kicker"><span class="kicker-rule" aria-hidden="true"></span>奥付 — 測定の記録</p>
-      <h2 class="colophon-title" id="colophon-title">測った数字だけを載せています。</h2>
+      <h2 class="colophon-title" id="colophon-title">実AIと105問の評価セットで測った結果</h2>
     </div>
     <dl class="metrics" id="metrics"></dl>
     <p class="colophon-note" id="colophon-note"></p>
