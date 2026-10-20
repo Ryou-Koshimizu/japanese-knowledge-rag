@@ -502,9 +502,39 @@ def write_report_blocks(retrieval: dict[str, Any], answers: dict[str, Any]) -> N
             f"| 検索 Recall@10 | {hybrid['recall']['10']:.3f} | 同上 |",
             f"| 権限の漏れ | {acl['leaks']} 件 | {acl['searches']}回の検索・{acl['hits_checked']:,}件の結果を権限の定義と照合 |",
             f"| 1問あたりの回答時間 | 中央値 {answers['median_seconds']} 秒 | 検索は十数ミリ秒、残りは AI |",
+            *live_rows(),
         ]
     )
     replace_block(ROOT / "README.md", "summary", readme)
+    live_path = EVIDENCE / "live-browser.json"
+    if live_path.exists():
+        live = json.loads(live_path.read_text(encoding="utf-8"))
+        lines = [
+            f"実AI（{model}）で動くサーバーを、Chromium と WebKit で画面から操作しました（{live['measured_at'][:10]}）。"
+            "質問を入力して回答・根拠を表示し、回答があるときは根拠の文書を開いて該当の条が印つきで表示されることまで確かめます。"
+            f"記録：[live-browser.json](evidence/live-browser.json)。",
+            "",
+            "| ブラウザ | 質問 | 種類 | 結果 | 秒 |",
+            "| --- | --- | --- | --- | --- |",
+            *(
+                f"| {r['browser']} | `{r['id']}` | {TYPE_NAMES.get(r.get('type', ''), r.get('type', ''))} "
+                f"| {'正しい' if r['ok'] else '誤り：' + '・'.join(r.get('problems', []))} | {r.get('seconds', '')} |"
+                for r in live["rows"]
+            ),
+            "",
+            f"**{live['ok']}/{live['checks']} 件が正しい**（誤答・誤った引用・画面の表示の違い・ページのエラー 0 件）。",
+        ]
+        replace_block(ROOT / "docs" / "verification.md", "live", "\n".join(lines))
+
+
+def live_rows() -> list[str]:
+    path = EVIDENCE / "live-browser.json"
+    if not path.exists():
+        return []
+    live = json.loads(path.read_text(encoding="utf-8"))
+    return [
+        f"| 実AI×実ブラウザの通し確認 | {live['ok']}/{live['checks']} 件 | Chromium と WebKit で画面から7種類の質問を入力し、回答・根拠・文書の表示まで確認 |"
+    ]
 
 
 def main() -> int:

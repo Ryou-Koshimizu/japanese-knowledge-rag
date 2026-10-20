@@ -194,7 +194,7 @@
       renderHits(result.hits || []);
     } catch (error) {
       $("#ink").hidden = true;
-      reading.prepend(notice("circle-alert", "答えを取得できませんでした", error.message));
+      reading.prepend(notice("circle-alert", "通信エラー", error.message));
     } finally {
       reading.setAttribute("aria-busy", "false");
       submit.disabled = false;
@@ -359,7 +359,7 @@
     try {
       doc = await api(`/api/documents/${encodeURIComponent(docId)}`);
     } catch (error) {
-      $("#reading").prepend(notice("circle-alert", "文書を開けませんでした", error.message));
+      $("#reading").prepend(notice("circle-alert", "文書の取得でエラー", error.message));
       return;
     }
     const formats = { markdown: "Markdown", pdf: "PDF", docx: "Word", html: "HTML" };

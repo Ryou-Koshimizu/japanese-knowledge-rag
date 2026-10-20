@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import re
+
 import pytest
 from axe_playwright_python.sync_playwright import Axe
 from playwright.sync_api import Page, expect
@@ -38,7 +40,7 @@ def test_ask_cite_and_open_document(page: Page, server: str) -> None:
     expect(page.locator("#answer-question")).to_have_text("本社って何時から何時までが定時ですか？")
     expect(page.locator(".stamp")).to_contain_text("記録の再生")
     body = page.locator("#answer-body")
-    expect(body).to_have_attribute("aria-label", r"(?s).*9:00.*18:00.*", timeout=5_000)
+    expect(body).to_have_attribute("aria-label", re.compile(r"9:00.*18:00"), timeout=5_000)
     expect(page.locator(".source").first).to_contain_text("就業規則")
     expect(page.locator(".hit").first).to_be_visible()
     page.wait_for_timeout(2_000)

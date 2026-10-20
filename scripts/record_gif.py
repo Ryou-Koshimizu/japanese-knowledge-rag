@@ -43,7 +43,14 @@ class Recorder:
             max(40, round((b[0] - a[0]) * 1000)) for a, b in itertools.pairwise(self.frames)
         ]
         durations.append(1800)
-        images = [f[1].quantize(colors=128, method=Image.Quantize.MEDIANCUT) for f in self.frames]
+        # 全コマで同じ色表を使い、ディザをかけない（紙の地が毎コマ揺れず、差分だけが残るので軽い）
+        picks = [round(i * (len(self.frames) - 1) / 7) for i in range(8)]
+        height = self.frames[0][1].height
+        sample = Image.new("RGB", (OUT_WIDTH, height * len(picks)))
+        for i, index in enumerate(picks):
+            sample.paste(self.frames[index][1], (0, i * height))
+        palette = sample.quantize(colors=255, method=Image.Quantize.FASTOCTREE)
+        images = [f[1].quantize(palette=palette, dither=Image.Dither.NONE) for f in self.frames]
         images[0].save(
             path,
             save_all=True,
@@ -82,8 +89,8 @@ def main() -> None:
 
     with sync_playwright() as p:
         shots: list[tuple[str, ViewportSize, str]] = [
-            ("chromium", {"width": 1440, "height": 900}, "answer-desktop.png"),
-            ("webkit", {"width": 390, "height": 844}, "answer-mobile.png"),
+            ("chromium", {"width": 1440, "height": 900}, "answer-desktop.webp"),
+            ("webkit", {"width": 390, "height": 844}, "answer-mobile.webp"),
         ]
         for engine_name, viewport, name in shots:
             engine = getattr(p, engine_name)
@@ -94,7 +101,8 @@ def main() -> None:
             page.fill("#question", LEAVE)
             page.keyboard.press("Enter")
             page.wait_for_timeout(4200)
-            page.locator("#answer").screenshot(path=str(ASSETS / name), caret="initial")
+            png = page.screenshot(caret="initial")
+            Image.open(io.BytesIO(png)).save(ASSETS / name, "WEBP", quality=82, method=6)
             browser.close()
     print("docs/assets に書きました")
 
