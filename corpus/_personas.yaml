@@ -1,0 +1,25 @@
+# 公開デモで選べる架空の社員（部署と役職で読める文書が変わる）
+- id: sales-staff
+  name: 営業部の一般社員
+  department: 営業部
+  role: 一般社員
+- id: hr-staff
+  name: 人事部の一般社員
+  department: 人事部
+  role: 一般社員
+- id: acct-manager
+  name: 経理部の管理職
+  department: 経理部
+  role: 管理職
+- id: it-staff
+  name: 情報システム部の一般社員
+  department: 情報システム部
+  role: 一般社員
+- id: dev-manager
+  name: 開発部の管理職
+  department: 開発部
+  role: 管理職
+- id: executive
+  name: 経営企画室の役員
+  department: 経営企画室
+  role: 役員

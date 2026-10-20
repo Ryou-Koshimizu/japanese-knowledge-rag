@@ -1,0 +1,165 @@
+- id: q-hr-work-rules-1
+  persona: sales-staff
+  type: answer
+  question: 本社って何時から何時までが定時ですか？
+  gold:
+    - doc: hr-work-rules
+      section: 第3条
+  must_include:
+    - ["9:00", "9時"]
+    - ["18:00", "18時"]
+
+- id: q-hr-work-rules-2
+  persona: dev-manager
+  type: answer
+  question: 懲戒で出勤停止にする場合、最長で何日までですか？
+  gold:
+    - doc: hr-work-rules
+      section: 第12条
+  must_include:
+    - ["14日"]
+
+- id: q-hr-annual-leave-1
+  persona: it-staff
+  type: answer
+  question: 有給を時間単位で取りたいんですが、年に何時間まで使えますか？
+  gold:
+    - doc: hr-annual-leave
+      section: 第6条
+  must_include:
+    - ["40時間", "5日分", "5日"]
+
+- id: q-hr-annual-leave-2
+  persona: sales-staff
+  type: answer
+  question: 使わなかった有給って次の年に持ち越せますか？最大で何日まで持てますか？
+  gold:
+    - doc: hr-annual-leave
+      section: 第9条
+  must_include:
+    - ["翌年度"]
+    - ["40日"]
+
+- id: q-hr-childcare-leave-1
+  persona: sales-staff
+  type: answer
+  question: 育休って子どもが何歳になるまで取れますか？
+  gold:
+    - doc: hr-childcare-leave
+      section: 第5条
+  must_include:
+    - ["1歳"]
+    - ["1歳6か月", "1歳6ヶ月", "1年6か月"]
+
+- id: q-hr-childcare-leave-2
+  persona: acct-manager
+  type: answer
+  question: 時短勤務は子どもがいくつになるまで使えますか？
+  gold:
+    - doc: hr-childcare-leave
+      section: 第9条
+  must_include:
+    - ["小学校3年生修了", "小学3年生修了", "小学校3年生"]
+
+- id: q-hr-nursing-care-leave-1
+  persona: executive
+  type: answer
+  question: 親の介護で休業を取る場合、合計で何日まで休めますか？
+  gold:
+    - doc: hr-nursing-care-leave
+      section: 第4条
+  must_include:
+    - ["93日"]
+
+- id: q-hr-nursing-care-leave-2
+  persona: hr-staff
+  type: answer
+  question: 介護休業の申出は休業開始のどれくらい前までに出せばいいですか？
+  gold:
+    - doc: hr-nursing-care-leave
+      section: 第5条
+  must_include:
+    - ["2週間前"]
+
+- id: q-hr-telework-1
+  persona: dev-manager
+  type: answer
+  question: 在宅って週に何日までできますか？
+  gold:
+    - doc: hr-telework
+      section: 第3条
+    # 介護をする社員の例外（上限を超えて利用できる）も正しい根拠。2026-10-20 の測定で判明し追加
+    - doc: hr-nursing-care-leave
+      section: 第12条
+  must_include:
+    - ["3日"]
+
+- id: q-hr-telework-2
+  persona: it-staff
+  type: answer
+  question: リモートワークの手当はいくらもらえますか？
+  gold:
+    - doc: hr-telework
+      section: 第10条
+  must_include:
+    - ["3,000円", "3000円", "3千円"]
+
+- id: q-hr-side-job-1
+  persona: hr-staff
+  type: answer
+  question: 副業を始めたいとき、いつまでに会社へ届け出ればいいですか？
+  gold:
+    - doc: hr-side-job
+      section: 第3条
+  must_include:
+    - ["30日前"]
+
+- id: q-hr-side-job-2
+  persona: dev-manager
+  type: answer
+  question: 雇われる形の副業は週に何時間まで働いていいんですか？
+  gold:
+    - doc: hr-side-job
+      section: 第9条
+  must_include:
+    - ["15時間"]
+
+- id: q-hr-resignation-1
+  persona: acct-manager
+  type: answer
+  question: 辞めるとき、一般社員は何か月前までに上司に言えばいいですか？
+  gold:
+    - doc: hr-resignation
+      section: "1.1"
+  must_include:
+    - ["1か月前", "1ヶ月前", "1カ月前"]
+
+- id: q-hr-resignation-2
+  persona: it-staff
+  type: answer
+  question: 退職したあと離職票はいつごろ家に届きますか？
+  gold:
+    - doc: hr-resignation
+      section: "5.1"
+  must_include:
+    - ["2週間"]
+
+- id: q-hr-commute-allowance-1
+  persona: executive
+  type: answer
+  question: 交通費の手当って月いくらまで出ますか？
+  gold:
+    - doc: hr-commute-allowance
+      section: 第5条
+  must_include:
+    - ["50,000円", "5万円", "50000円"]
+
+- id: q-hr-commute-allowance-2
+  persona: sales-staff
+  type: answer
+  question: 引っ越したら通勤経路の届出はいつまでに出す必要がありますか？
+  gold:
+    - doc: hr-commute-allowance
+      section: 第11条
+  must_include:
+    - ["10日以内", "10日"]

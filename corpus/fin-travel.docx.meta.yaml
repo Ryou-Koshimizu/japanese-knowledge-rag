@@ -1,0 +1,7 @@
+id: fin-travel
+title: 旅費規程
+departments:
+- '*'
+min_role: 一般社員
+owner: 経理部
+updated: 2025-10-01

@@ -1,0 +1,161 @@
+- id: q-fin-expense-1
+  persona: sales-staff
+  type: answer
+  question: 先月立て替えた経費、いつまでに精算を出せばいいですか？
+  gold:
+    - doc: fin-expense
+      section: 第4条
+  must_include:
+    - ["翌月5営業日", "翌月の5営業日", "翌月第5営業日"]
+
+- id: q-fin-expense-2
+  persona: dev-manager
+  type: answer
+  question: 取引先との会食って、ひとりあたりいくらまでなら経費で落とせますか？
+  gold:
+    - doc: fin-expense
+      section: 第10条
+  must_include:
+    - ["1万円", "10,000円", "10000円"]
+
+- id: q-fin-travel-1
+  persona: sales-staff
+  type: answer
+  question: 東京に出張で泊まるとき、ホテル代はいくらまで出ますか？（一般社員です）
+  gold:
+    - doc: fin-travel
+      section: 第7条
+  must_include:
+    - ["12,000円", "1万2,000円", "1万2000円", "12000円"]
+
+- id: q-fin-travel-2
+  persona: dev-manager
+  type: answer
+  question: 海外出張の申請は出発の何日前までに出さないといけない？
+  gold:
+    - doc: fin-travel
+      section: 第3条
+  must_include:
+    - ["1か月前", "1ヶ月前", "1カ月前", "一か月前"]
+
+- id: q-ga-condolence-1
+  persona: it-staff
+  type: answer
+  question: 結婚したら特別休暇は何日もらえますか？
+  gold:
+    - doc: ga-condolence
+      section: 第11条
+  must_include:
+    - ["5日"]
+
+- id: q-ga-condolence-2
+  persona: hr-staff
+  type: answer
+  question: 子どもが生まれたら会社からお祝い金は出ますか？いくらですか？
+  gold:
+    - doc: ga-condolence
+      section: 第5条
+  must_include:
+    - ["2万円", "20,000円", "20000円"]
+
+- id: q-hr-training-support-1
+  persona: it-staff
+  type: answer
+  question: 仕事の本を買ったときの補助って、月いくらまでですか？
+  gold:
+    - doc: hr-training-support
+      section: 第11条
+  must_include:
+    - ["5,000円", "5000円", "5千円"]
+
+- id: q-hr-training-support-2
+  persona: executive
+  type: answer
+  question: 自分から申し込む外部セミナーの受講料は、会社がどれくらい負担してくれますか？
+  gold:
+    - doc: hr-training-support
+      section: 第5条
+  must_include:
+    - ["80%", "80％", "8割"]
+    - ["15万円", "150,000円", "150000円"]
+
+- id: q-ga-disaster-1
+  persona: acct-manager
+  type: answer
+  question: 大きい地震のあと安否確認のメールが来たら、何時間以内に返事すればいい？
+  gold:
+    - doc: ga-disaster
+      section: "4.2"
+  must_include:
+    - ["2時間"]
+
+- id: q-ga-disaster-2
+  persona: sales-staff
+  type: answer
+  question: 本社で避難するとき、最初に集まる場所はどこですか？
+  gold:
+    - doc: ga-disaster
+      section: "3.1"
+  must_include:
+    - ["第2駐車場", "第二駐車場"]
+
+- id: q-ga-benefits-1
+  persona: dev-manager
+  type: answer
+  question: 人間ドックを受けたいんですが、会社の補助はいくら出ますか？
+  gold:
+    - doc: ga-benefits
+      section: "2.2"
+  must_include:
+    - ["3万円", "30,000円", "30000円"]
+
+- id: q-ga-benefits-2
+  persona: hr-staff
+  type: answer
+  question: うちの製品って社割で買えますか？何割引きになる？
+  gold:
+    - doc: ga-benefits
+      section: "6.1"
+  must_include:
+    - ["30%", "30％", "3割"]
+
+- id: q-ga-records-1
+  persona: acct-manager
+  type: answer
+  question: 契約書は何年保管しておく必要がありますか？
+  gold:
+    - doc: ga-records
+      section: 第4条
+  must_include:
+    - ["10年"]
+
+- id: q-ga-records-2
+  persona: it-staff
+  type: answer
+  question: 極秘とか社外秘の表示がついてない資料って、どう扱えばいいですか？
+  gold:
+    - doc: ga-records
+      section: 第8条
+  must_include:
+    - ["社外秘"]
+
+- id: q-cmp-whistleblowing-1
+  persona: sales-staff
+  type: answer
+  question: 社内の不正を通報したいけど、名前を出さずにできますか？
+  gold:
+    - doc: cmp-whistleblowing
+      section: 第6条
+  must_include:
+    - ["匿名"]
+    - ["受付番号"]
+
+- id: q-cmp-whistleblowing-2
+  persona: executive
+  type: answer
+  question: 内部通報が入ったら、調査はどれくらいの期間で終えることになっていますか？
+  gold:
+    - doc: cmp-whistleblowing
+      section: 第8条
+  must_include:
+    - ["3か月", "3ヶ月", "3カ月", "三か月"]

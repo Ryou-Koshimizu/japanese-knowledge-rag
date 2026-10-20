@@ -1,0 +1,7 @@
+id: sec-policy
+title: 情報セキュリティ基本方針
+departments:
+- '*'
+min_role: 一般社員
+owner: 情報システム部
+updated: 2026-04-01

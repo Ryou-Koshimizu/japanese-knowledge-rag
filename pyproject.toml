@@ -1,0 +1,83 @@
+[project]
+name = "japanese-knowledge-rag"
+version = "1.0.0"
+description = "社内規程・マニュアルに出典つきで答える、日本語に強い社内ナレッジ検索AI（RAG）"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Ryou Koshimizu" }]
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.120",
+  "uvicorn>=0.38",
+  "pydantic>=2.12",
+  "pypdf>=6.1",
+  "python-docx>=1.2",
+  "pyyaml>=6.0.3",
+  "anthropic>=0.70",
+  "httpx>=0.28",
+]
+
+[project.optional-dependencies]
+# 手元で動く多言語の埋め込み（API不要・約220MBのモデルを初回に取得）
+local = ["fastembed>=0.7"]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4",
+  "ruff>=0.14",
+  "mypy>=1.18",
+  "types-PyYAML>=6.0",
+  "playwright>=1.55",
+  "axe-playwright-python>=0.1.7",
+  "pillow>=12.3.0",
+]
+
+[project.scripts]
+knowledge-rag = "knowledge_rag.cli:main"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/knowledge_rag"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "S", "SIM", "RUF", "PL", "N", "C4", "PT", "RET", "TID"]
+ignore = [
+  "RUF001", "RUF002", "RUF003",  # 全角の記号は日本語の本文として正しい
+  "PLR0913", "PLR2004", "PLR0911", "PLR0912", "PLR0915",
+  "S101",
+  "N818",     # 例外名は意味で付ける（Unauthorized / NotRecorded）
+  "PLC0415",  # 重い依存（PDF・Word・埋め込み・SDK）は使う時だけ読み込み、起動を速くする
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S", "PLR2004", "PT018", "PT011"]
+"tests/e2e/test_viewports.py" = ["E501"]  # 画面で測る JavaScript をそのまま書く
+# SQL は固定の断片を組み合わせるだけで、値はすべてバインド変数で渡す
+"src/knowledge_rag/store.py" = ["S608"]
+"scripts/**" = ["S603", "S607", "T201", "PLC0415"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["src", "tests", "scripts"]
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+module = ["docx.*", "axe_playwright_python.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+  "e2e: 実ブラウザ（Chromium と WebKit）で画面を操作する試験",
+]

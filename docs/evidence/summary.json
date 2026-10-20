@@ -1,0 +1,30 @@
+{
+  "retrieval": {
+    "label": "ハイブリッド・手元の多言語埋め込み",
+    "questions": 77,
+    "recall_at_5": 0.961,
+    "recall_at_10": 1.0,
+    "mrr": 0.847,
+    "measured_at": "2026-10-20T11:24:17+00:00"
+  },
+  "acl": {
+    "searches": 630,
+    "hits_checked": 6300,
+    "leaks": 0
+  },
+  "answers": {
+    "model": "gpt-6.1-sol",
+    "questions": 105,
+    "all_ok": 104,
+    "answerable": 77,
+    "facts_ok": 77,
+    "grounded": 77,
+    "citations": 127,
+    "citations_wrong": 1,
+    "unanswerable": 28,
+    "not_found_ok": 28,
+    "median_seconds": 7.9,
+    "measured_at": "2026-10-20T11:26:16+00:00"
+  },
+  "note": "架空の規程32篇・質問105問で測定。回答は gpt-6.1-sol（ChatGPT の Codex CLI 経由）、測定日 2026-10-20。公開デモはこの記録を再生しています。"
+}

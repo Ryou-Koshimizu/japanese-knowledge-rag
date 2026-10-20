@@ -1,0 +1,311 @@
+# 担当 D（部署限定・役職限定の8文書）の質問セット
+
+# ---- hr-onboarding-ops（人事部 / 一般社員）----
+- id: q-hr-onboarding-ops-1
+  persona: hr-staff
+  type: answer
+  question: 内定した人に入社書類を出してもらう期限って、入社日の何日前でしたっけ？
+  gold:
+    - doc: hr-onboarding-ops
+      section: "2.1"
+  must_include:
+    - ["10営業日前"]
+
+- id: q-hr-onboarding-ops-2
+  persona: hr-staff
+  type: answer
+  question: 雇用保険の資格取得届は社内ルールだといつまでに出せばいいですか？
+  gold:
+    - doc: hr-onboarding-ops
+      section: "3.2"
+  must_include:
+    - ["翌月5日", "翌月の5日"]
+
+- id: q-hr-onboarding-ops-3
+  persona: hr-staff
+  type: answer
+  question: 新入社員って初日は何時にどこへ来てもらえばいい？
+  gold:
+    - doc: hr-onboarding-ops
+      section: "4.1"
+  must_include:
+    - ["9:30", "9時30分", "9時半"]
+    - ["1階受付"]
+
+- id: q-restricted-hr-onboarding-ops-1
+  persona: it-staff
+  type: restricted
+  question: 新しく入った人の健康保険の資格取得届、人事は入社後いつまでに出す決まりになってますか？
+  gold: []
+  must_not_include: ["翌々営業日"]
+
+# ---- hr-evaluation（全部署 / 管理職以上）----
+- id: q-hr-evaluation-1
+  persona: dev-manager
+  type: answer
+  question: 部下の一次評価って、いつまでにシステムに入れればいいんだっけ？
+  gold:
+    - doc: hr-evaluation
+      section: "2.2"
+  must_include:
+    - ["20日"]
+
+- id: q-hr-evaluation-2
+  persona: acct-manager
+  type: answer
+  question: 評価でSとAを付けられるのは、合わせて部門の何％までですか？
+  gold:
+    - doc: hr-evaluation
+      section: "3.3"
+  must_include:
+    - ["28%", "28％"]
+
+- id: q-hr-evaluation-3
+  persona: executive
+  type: answer
+  question: 評価結果に納得できない社員が異議を出せるのは、面談から何日以内？
+  gold:
+    - doc: hr-evaluation
+      section: "5.2"
+  must_include:
+    - ["14日以内", "14日"]
+
+- id: q-restricted-hr-evaluation-1
+  persona: sales-staff
+  type: restricted
+  question: 人事評価でA評価をもらえるのって部署の何％くらいって決まってるんですか？
+  gold: []
+  must_not_include: ["22%", "22％", "28%", "28％"]
+
+# ---- hr-payroll-ops（人事部 / 一般社員）----
+- id: q-hr-payroll-ops-1
+  persona: hr-staff
+  type: answer
+  question: 今年度の冬のボーナスの算定係数っていくつ？
+  gold:
+    - doc: hr-payroll-ops
+      section: "3.2"
+  must_include:
+    - ["2.35"]
+
+- id: q-hr-payroll-ops-2
+  persona: hr-staff
+  type: answer
+  question: 勤怠システムの締めは何日の何時ですか？
+  gold:
+    - doc: hr-payroll-ops
+      section: "2.1"
+  must_include:
+    - ["第2営業日"]
+    - ["正午", "12時", "12:00"]
+
+- id: q-hr-payroll-ops-3
+  persona: hr-staff
+  type: answer
+  question: 給与の振込データ、経理部へはいつまでに渡せばいいんでしたっけ？
+  gold:
+    - doc: hr-payroll-ops
+      section: "4.3"
+  must_include:
+    - ["3営業日前"]
+    - ["15時", "15:00", "午後3時"]
+
+- id: q-restricted-hr-payroll-ops-1
+  persona: sales-staff
+  type: restricted
+  question: 冬のボーナスって基本給の何か月分出るんですか？
+  gold: []
+  must_not_include: ["2.35"]
+
+# ---- exec-compensation（全部署 / 役員）----
+- id: q-exec-compensation-1
+  persona: executive
+  type: answer
+  question: 取締役の退職慰労金を計算するときの役位係数はいくつ？
+  gold:
+    - doc: exec-compensation
+      section: 第12条
+  must_include:
+    - ["1.75"]
+
+- id: q-exec-compensation-2
+  persona: executive
+  type: answer
+  question: 役員報酬の改定は、株主総会のあといつまでに決めることになってる？
+  gold:
+    - doc: exec-compensation
+      section: 第7条
+  must_include:
+    - ["1か月以内", "1ヶ月以内", "1カ月以内", "一か月以内"]
+
+- id: q-exec-compensation-3
+  persona: executive
+  type: answer
+  question: 慰労金の功労加算は最大でどのくらい上乗せできますか？
+  gold:
+    - doc: exec-compensation
+      section: 第13条
+  must_include:
+    - ["30%", "30％"]
+
+- id: q-restricted-exec-compensation-1
+  persona: dev-manager
+  type: restricted
+  question: 役員が辞めるときの退職慰労金って、取締役だと係数いくつで計算してるの？
+  gold: []
+  must_not_include: ["1.75", "3.15"]
+
+# ---- fin-monthly-close（経理部 / 一般社員）----
+- id: q-fin-monthly-close-1
+  persona: acct-manager
+  type: answer
+  question: 月次の本締めは翌月の何営業日目？
+  gold:
+    - doc: fin-monthly-close
+      section: "2.1"
+  must_include:
+    - ["第7営業日", "7営業日"]
+
+- id: q-fin-monthly-close-2
+  persona: acct-manager
+  type: answer
+  question: 取引先が振込手数料を引いて入金してきたとき、いくらまでなら手数料で処理していい？
+  gold:
+    - doc: fin-monthly-close
+      section: "3.3"
+  must_include:
+    - ["880円"]
+
+- id: q-fin-monthly-close-3
+  persona: acct-manager
+  type: answer
+  question: 支払期日から181日以上たった売掛金の貸倒引当率は何％ですか？
+  gold:
+    - doc: fin-monthly-close
+      section: "4.1"
+  must_include:
+    - ["60%", "60％"]
+
+- id: q-restricted-fin-monthly-close-1
+  persona: sales-staff
+  type: restricted
+  question: お客さんが振込手数料を引いて払ってきた場合、いくらまでなら経理でそのまま処理してもらえますか？
+  gold: []
+  must_not_include: ["880円"]
+
+# ---- fin-payment-approval（経理部 / 一般社員）----
+- id: q-fin-payment-approval-1
+  persona: acct-manager
+  type: answer
+  question: 支払申請、経理部長の決裁で通せるのは税込いくら未満まで？
+  gold:
+    - doc: fin-payment-approval
+      section: 第4条
+  must_include:
+    - ["500万円"]
+
+- id: q-fin-payment-approval-2
+  persona: acct-manager
+  type: answer
+  question: 取引先への定例の振込って毎月何日ですか？
+  gold:
+    - doc: fin-payment-approval
+      section: 第6条
+  must_include:
+    - ["5日"]
+    - ["20日"]
+
+- id: q-fin-payment-approval-3
+  persona: acct-manager
+  type: answer
+  question: 取引先から「口座を変えたので次からこちらへ」とメールが来たら、どう対応すればいい？
+  gold:
+    - doc: fin-payment-approval
+      section: 第10条
+  must_include:
+    - ["振込先変更届"]
+    - ["折り返し", "電話"]
+
+- id: q-restricted-fin-payment-approval-1
+  persona: dev-manager
+  type: restricted
+  question: 外注先への支払いって、いくらまでなら経理部長の承認だけで振り込んでもらえますか？
+  gold: []
+  must_not_include: ["500万円", "2,000万円"]
+
+# ---- sales-discount（営業部 / 一般社員）----
+- id: q-sales-discount-1
+  persona: sales-staff
+  type: answer
+  question: 見積で10%値引きしたいんですけど、誰の承認が要りますか？
+  gold:
+    - doc: sales-discount
+      section: 第4条
+  must_include:
+    - ["営業課長"]
+
+- id: q-sales-discount-2
+  persona: sales-staff
+  type: answer
+  question: 特別価格って、出してから何日間有効？
+  gold:
+    - doc: sales-discount
+      section: 第9条
+  must_include:
+    - ["90日"]
+
+- id: q-sales-discount-3
+  persona: sales-staff
+  type: answer
+  question: 値引きしたあとの粗利率が何％を切ったら役員承認になりますか？
+  gold:
+    - doc: sales-discount
+      section: 第5条
+  must_include:
+    - ["23%", "23％"]
+
+- id: q-restricted-sales-discount-1
+  persona: dev-manager
+  type: restricted
+  question: 営業がお客さんに値引きするとき、粗利率は何％まで下げてもいいルールになってるの？
+  gold: []
+  must_not_include: ["23%", "23％"]
+
+# ---- sales-crm-rules（営業部 / 一般社員）----
+- id: q-sales-crm-rules-1
+  persona: sales-staff
+  type: answer
+  question: 直帰して日報を書けなかった日は、いつまでに入れればいいですか？
+  gold:
+    - doc: sales-crm-rules
+      section: "2.1"
+  must_include:
+    - ["翌営業日"]
+    - ["10時", "10:00"]
+
+- id: q-sales-crm-rules-2
+  persona: sales-staff
+  type: answer
+  question: 見積を出した案件って、受注確度は何％で登録するんでしたっけ？
+  gold:
+    - doc: sales-crm-rules
+      section: "4.1"
+  must_include:
+    - ["45%", "45％"]
+
+- id: q-sales-crm-rules-3
+  persona: sales-staff
+  type: answer
+  question: もらった名刺は何日以内にシステムへ登録しないといけない？
+  gold:
+    - doc: sales-crm-rules
+      section: "3.3"
+  must_include:
+    - ["3営業日以内", "3営業日"]
+
+- id: q-restricted-sales-crm-rules-1
+  persona: it-staff
+  type: restricted
+  question: 営業の商談管理で、見積を出した段階の受注確度って何％で計算してるんですか？
+  gold: []
+  must_not_include: ["45%", "45％"]

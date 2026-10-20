@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>索引室 — 社内規程に、出典つきで答える</title>
+<meta name="description" content="社内規程・マニュアルを日本語のハイブリッド検索で引き、該当箇所を引用して答える社内ナレッジ検索AI（RAG）。部署・役職ごとに読める文書を検索の段階で分けます。">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f3ecdf">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/static/app.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%23f3ecdf'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' font-family='serif' fill='%23b8432c'%3E索%3C/text%3E%3C/svg%3E">
+<script src="/static/app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#ask">質問欄へ移動</a>
+
+<header class="masthead" role="banner">
+  <a class="brand" href="/" aria-label="索引室 トップへ">
+    <span class="brand-mark" aria-hidden="true">索</span>
+    <span class="brand-text">
+      <span class="brand-name">索引室</span>
+      <span class="brand-sub">社内ナレッジ検索</span>
+    </span>
+  </a>
+  <p class="issue" aria-live="polite"><span id="issue-docs">—</span><span class="issue-sep" aria-hidden="true">／</span><span id="issue-mode">読み込み中</span></p>
+  <div class="persona">
+    <button class="persona-button" id="persona-button" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="persona-list">
+      <svg class="icon" aria-hidden="true"><use href="/static/icons.svg#i-user"/></svg>
+      <span class="persona-label"><span class="persona-caption">閲覧者</span><span id="persona-name">—</span></span>
+    </button>
+    <ul class="persona-list" id="persona-list" role="listbox" aria-label="閲覧者を選ぶ" hidden></ul>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="kicker reveal"><span class="kicker-rule" aria-hidden="true"></span>社内規程・マニュアルの問答</p>
+      <h1 id="hero-title" class="headline">
+        <span class="line"><span class="line-inner">規程に聞く。</span></span>
+        <span class="line"><span class="line-inner">出典で<em>答える</em>。</span></span>
+      </h1>
+      <p class="deck reveal">架空の会社の規程<span id="deck-docs">32</span>篇から該当の条文を引き、引用つきで答えます。書かれていないことには「記載がありません」と答えます。</p>
+      <form class="ask reveal" id="ask" role="search" autocomplete="off">
+        <label class="sr-only" for="question">規程について質問する</label>
+        <svg class="icon ask-icon" aria-hidden="true"><use href="/static/icons.svg#i-search"/></svg>
+        <input id="question" name="question" type="search" maxlength="400" required placeholder="例）育休は子どもが何歳になるまで取れますか" enterkeyhint="search">
+        <button class="ask-submit magnetic" type="submit">
+          <span>問う</span>
+          <svg class="icon" aria-hidden="true"><use href="/static/icons.svg#i-corner-down-left"/></svg>
+        </button>
+      </form>
+      <div class="suggest reveal" aria-label="記録済みの質問の例">
+        <span class="suggest-label">例</span>
+        <ul class="suggest-list" id="suggest-list"></ul>
+      </div>
+    </div>
+    <aside class="hero-aside reveal" aria-label="この閲覧者が読める文書">
+      <p class="aside-title">この立場で読める文書</p>
+      <p class="aside-count"><span class="count" id="readable-count">0</span><span class="aside-unit">篇</span></p>
+      <p class="aside-note" id="readable-note">部署・役職で読める範囲が変わります。読めない文書は検索の段階で除きます。</p>
+    </aside>
+  </section>
+
+  <section class="reading" id="reading" aria-live="polite" aria-busy="false" hidden>
+    <div class="ink" id="ink" hidden>
+      <svg class="ink-svg" viewBox="0 0 200 200" aria-hidden="true">
+        <defs>
+          <filter id="bleed" x="-50%" y="-50%" width="200%" height="200%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="noise">
+              <animate attributeName="baseFrequency" dur="2.4s" values="0.03;0.05;0.03" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="26"/>
+          </filter>
+        </defs>
+        <g filter="url(#bleed)">
+          <circle class="ink-drop d1" cx="100" cy="100" r="30"/>
+          <circle class="ink-drop d2" cx="78" cy="112" r="16"/>
+          <circle class="ink-drop d3" cx="126" cy="88" r="12"/>
+        </g>
+      </svg>
+      <p class="ink-text">索引をたどっています</p>
+    </div>
+
+    <article class="answer" id="answer" hidden>
+      <header class="answer-head">
+        <p class="answer-kicker"><span>問</span><span class="answer-persona" id="answer-persona"></span></p>
+        <h2 class="answer-question" id="answer-question"></h2>
+        <div class="answer-meta" id="answer-meta"></div>
+      </header>
+      <div class="answer-columns">
+        <div class="answer-main">
+          <p class="answer-label"><span>答</span></p>
+          <div class="answer-body" id="answer-body"></div>
+          <p class="answer-foot" id="answer-foot"></p>
+        </div>
+        <aside class="sources" aria-labelledby="sources-title">
+          <h3 class="sources-title" id="sources-title">根拠</h3>
+          <ol class="source-list" id="source-list"></ol>
+        </aside>
+      </div>
+    </article>
+
+    <section class="hits" id="hits" aria-labelledby="hits-title" hidden>
+      <div class="hits-head">
+        <h3 class="hits-title" id="hits-title">検索した箇所</h3>
+        <p class="hits-note">語の一致・見出し・3文字の部分一致・埋め込みの順位を RRF で統合した結果。読めない文書は含みません。</p>
+      </div>
+      <ol class="hit-list" id="hit-list"></ol>
+    </section>
+  </section>
+
+  <section class="colophon" aria-labelledby="colophon-title">
+    <div class="colophon-head">
+      <p class="kicker"><span class="kicker-rule" aria-hidden="true"></span>奥付 — 測定の記録</p>
+      <h2 class="colophon-title" id="colophon-title">測った数字だけを載せています。</h2>
+    </div>
+    <dl class="metrics" id="metrics"></dl>
+    <p class="colophon-note" id="colophon-note"></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>索引室 — 社内ナレッジ検索（RAG）のポートフォリオ。会社・規程・人物はすべて架空です。</p>
+  <p><a href="https://github.com/Ryou-Koshimizu/japanese-knowledge-rag" rel="noopener">ソースコード（GitHub）</a></p>
+</footer>
+
+<div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <div class="sheet-page" id="sheet-page">
+    <header class="sheet-head">
+      <p class="sheet-kicker" id="sheet-kicker"></p>
+      <h2 class="sheet-title" id="sheet-title"></h2>
+      <button class="sheet-close" id="sheet-close" type="button" aria-label="文書を閉じる">
+        <svg class="icon" aria-hidden="true"><use href="/static/icons.svg#i-x"/></svg>
+      </button>
+    </header>
+    <div class="sheet-body" id="sheet-body" tabindex="0"></div>
+  </div>
+</div>
+</body>
+</html>

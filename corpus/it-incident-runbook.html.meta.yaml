@@ -1,0 +1,7 @@
+id: it-incident-runbook
+title: 障害対応手順書
+departments:
+- 情報システム部
+min_role: 一般社員
+owner: 情報システム部
+updated: 2026-01-15
