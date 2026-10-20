@@ -4,6 +4,7 @@
 
 [![CI](https://github.com/Ryou-Koshimizu/japanese-knowledge-rag/actions/workflows/ci.yml/badge.svg)](https://github.com/Ryou-Koshimizu/japanese-knowledge-rag/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![公開デモ](https://img.shields.io/badge/%E5%85%AC%E9%96%8B%E3%83%87%E3%83%A2-%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6%E3%81%A7%E9%96%8B%E3%81%8F-0369a1)](https://japanese-knowledge-rag.vercel.app)
 
 ![質問すると、根拠の条文に蛍光ペンが引かれ、文書が紙のようにめくれて開く。読めない部署の文書にある質問には「規程に記載がありません」と答える](docs/assets/demo.gif)
 
@@ -44,6 +45,8 @@
 ## 試す
 
 ### ブラウザで（インストール不要）
+
+**<https://japanese-knowledge-rag.vercel.app>** を開くだけで試せます。
 
 公開デモは Vercel の Python ランタイムで動く構成です（[vercel.json](vercel.json)・[api/index.py](api/index.py)、鍵なし）。閲覧者（営業部の一般社員・経理部の管理職・役員など6人）を切り替えると、読める文書と答えが変わります。
 
