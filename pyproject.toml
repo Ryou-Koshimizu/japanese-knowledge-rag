@@ -60,7 +60,8 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["S", "PLR2004", "PT018", "PT011"]
-"tests/e2e/test_viewports.py" = ["E501"]  # 画面で測る JavaScript をそのまま書く
+"tests/e2e/test_viewports.py" = ["E501"]
+"scripts/evaluate.py" = ["E501"]  # 報告の日本語の表を1行ずつ組み立てる  # 画面で測る JavaScript をそのまま書く
 # SQL は固定の断片を組み合わせるだけで、値はすべてバインド変数で渡す
 "src/knowledge_rag/store.py" = ["S608"]
 "scripts/**" = ["S603", "S607", "T201", "PLC0415"]

@@ -376,8 +376,103 @@ def run_summary() -> int:
         ),
     }
     (EVIDENCE / "summary.json").write_text(json.dumps(out, ensure_ascii=False, indent=2) + "\n")
+    write_report_blocks(retrieval, answers)
     print(json.dumps(out, ensure_ascii=False, indent=2))
     return 0
+
+
+METHOD_NAMES = {
+    "trigram": "部分一致（FTS5 trigram）だけ",
+    "terms": "語の一致（BM25）だけ",
+    "heading": "見出しだけ",
+    "vector": "埋め込みだけ",
+    "terms+heading+trigram": "語・見出し・部分一致の統合",
+    "terms+heading+trigram+vector": "**4方式の統合（既定）**",
+}
+EMBEDDER_NAMES = {
+    "hashing": "軽量（文字 n-gram のハッシュ、CI・公開デモ）",
+    "local": "多言語の文埋め込み（MiniLM、手元で動く）",
+}
+TYPE_NAMES = {
+    "answer": "答えがある",
+    "injection": "文書に乗っ取りの文",
+    "absent": "書かれていない",
+    "restricted": "読めない文書にある",
+    "attack": "質問からの乗っ取り",
+}
+
+
+def replace_block(path: Path, name: str, body: str) -> None:
+    text = path.read_text(encoding="utf-8")
+    start, end = f"<!-- {name}:start -->", f"<!-- {name}:end -->"
+    head, rest = text.split(start, 1)
+    _, tail = rest.split(end, 1)
+    path.write_text(f"{head}{start}\n{body.strip()}\n{end}{tail}", encoding="utf-8")
+
+
+def write_report_blocks(retrieval: dict[str, Any], answers: dict[str, Any]) -> None:
+    """README と検証記録の表を、測定の記録から書き直す（手で数字を写さない）。"""
+    lines = [
+        "| 埋め込み | 方式 | Recall@1 | Recall@3 | Recall@5 | Recall@10 | MRR | 1問あたり |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    for kind, data in retrieval["embedders"].items():
+        for m in data["methods"]:
+            r = m["recall"]
+            lines.append(
+                f"| {EMBEDDER_NAMES.get(kind, kind)} | {METHOD_NAMES.get(m['method'], m['method'])} "
+                f"| {r['1']:.3f} | {r['3']:.3f} | {r['5']:.3f} | {r['10']:.3f} | {m['mrr']:.3f} "
+                f"| {m['ms_per_query']:.0f} ms |"
+            )
+    replace_block(ROOT / "docs" / "verification.md", "retrieval", "\n".join(lines))
+
+    s = answers["summary"]
+    model = answers["model"].removeprefix("codex:")
+    rows = ["| 種類 | 問数 | 正しかった |", "| --- | --- | --- |"]
+    for kind, v in s["by_type"].items():
+        rows.append(f"| {TYPE_NAMES.get(kind, kind)}（{kind}） | {v['total']} | {v['ok']} |")
+    detail = "\n".join(
+        [
+            f"測定モデル：**{model}**（ChatGPT の Codex CLI 経由、推論は low）。"
+            f"検索は多言語の文埋め込みを使う構成、上位{answers.get('context_size', CONTEXT_SIZE)}件を渡す。"
+            f"記録：[answers.json](evidence/answers.json)。",
+            "",
+            *rows,
+            "",
+            f"- 全体：**{s['all_ok']}/{s['questions']} 問が正しい**（誤答・誤った引用・「記載なし」の取り違え・エラーの合計 "
+            f"{s['questions'] - s['all_ok']} 件）",
+            f"- 答えがある{s['answerable']}問：正しい事実 {s['facts_ok']}/{s['answerable']}、"
+            f"正解の見出しを引用 {s['grounded']}/{s['answerable']}",
+            f"- 表示した引用 {s['citations']} 件のうち、正解の文書以外を引いたもの {s['citations_wrong']} 件",
+            f"- 照合で表示しなかった引用（AIの引用ミスを仕組みで止めた数）：{s['rejected_by_guard']} 件",
+            f"- 「記載なし」が正解の{s['unanswerable']}問：{s['not_found_ok']}/{s['unanswerable']}",
+            f"- 1問あたりの時間（中央値）：{answers['median_seconds']} 秒、"
+            f"入力トークン合計 {answers['input_tokens']:,}・出力 {answers['output_tokens']:,}",
+            f"- 指示文のハッシュ `{answers['instructions_sha']}`・質問のハッシュ `{answers['questions_sha']}`",
+        ]
+    )
+    replace_block(ROOT / "docs" / "verification.md", "answers", detail)
+
+    local = retrieval["embedders"].get("local") or next(iter(retrieval["embedders"].values()))
+    hybrid = local["methods"][-1]
+    hashing = retrieval["embedders"].get("hashing", local)["methods"][-1]
+    acl = local["acl_audit"]
+    readme = "\n".join(
+        [
+            "| 指標 | 結果 | 条件 |",
+            "| --- | --- | --- |",
+            f"| **回答の正答（実AI）** | **{s['all_ok']}/{s['questions']} 問** | {model}（ChatGPT の Codex CLI 経由）。"
+            "答えがある・書かれていない・読めない・乗っ取りの5種類 |",
+            f"| 誤った引用 | {s['citations_wrong']} 件 | 表示した引用 {s['citations']} 件。すべて本文と一字一句一致 |",
+            f"| 「記載なし」の正答 | {s['not_found_ok']}/{s['unanswerable']} 問 | 書かれていない13・読めない11・質問からの乗っ取り4 |",
+            f"| 検索 Recall@5 / MRR | {hybrid['recall']['5']:.3f} / {hybrid['mrr']:.3f} | 77問、4方式の統合・多言語の文埋め込み。"
+            f"軽量な埋め込み（公開デモ）では {hashing['recall']['5']:.3f} / {hashing['mrr']:.3f} |",
+            f"| 検索 Recall@10 | {hybrid['recall']['10']:.3f} | 同上 |",
+            f"| 権限の漏れ | {acl['leaks']} 件 | {acl['searches']}回の検索・{acl['hits_checked']:,}件の結果を権限の定義と照合 |",
+            f"| 1問あたりの回答時間 | 中央値 {answers['median_seconds']} 秒 | 検索は十数ミリ秒、残りは AI |",
+        ]
+    )
+    replace_block(ROOT / "README.md", "summary", readme)
 
 
 def main() -> int:

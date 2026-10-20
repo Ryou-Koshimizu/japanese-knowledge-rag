@@ -96,7 +96,7 @@ def evaluate_retrieval(
     questions: list[Question],
     personas: dict[str, Principal],
     methods: tuple[str, ...],
-    ks: tuple[int, ...] = (1, 3, 5, 10),
+    ks: tuple[int, ...] = (1, 3, 5, 8, 10),
 ) -> RetrievalReport:
     targets = [q for q in questions if q.type in ANSWERABLE]
     found = dict.fromkeys(ks, 0)
