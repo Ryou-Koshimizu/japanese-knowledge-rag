@@ -1,7 +1,7 @@
 {
-  "measured_at": "2026-10-20T11:24:17+00:00",
-  "commit": "unknown",
-  "questions_sha": "efd41d9e3e50",
+  "measured_at": "2026-10-20T12:02:12+00:00",
+  "commit": "03a50eb",
+  "questions_sha": "77faca2a0343",
   "questions": 77,
   "embedders": {
     "hashing": {
@@ -12,21 +12,20 @@
           "questions": 77,
           "recall": {
             "1": 0.35064935064935066,
-            "3": 0.5064935064935064,
-            "5": 0.5844155844155844,
-            "10": 0.6493506493506493
+            "3": 0.5324675324675324,
+            "5": 0.5974025974025974,
+            "10": 0.6623376623376623
           },
-          "mrr": 0.4400948258091114,
+          "mrr": 0.4483199340342197,
           "misses": [
-            "q-hr-work-rules-1@6",
             "q-hr-annual-leave-2@6",
             "q-hr-nursing-care-leave-1",
-            "q-hr-telework-1",
             "q-hr-side-job-1",
             "q-hr-side-job-2",
             "q-hr-resignation-1",
             "q-hr-commute-allowance-1",
             "q-fin-expense-1",
+            "q-fin-expense-2@6",
             "q-ga-condolence-1",
             "q-ga-condolence-2",
             "q-hr-training-support-1",
@@ -51,26 +50,24 @@
             "q-fin-payment-approval-2",
             "q-sales-discount-1"
           ],
-          "ms_per_query": 18.5
+          "ms_per_query": 11.6
         },
         {
           "method": "terms",
           "questions": 77,
           "recall": {
-            "1": 0.7272727272727273,
-            "3": 0.9090909090909091,
-            "5": 0.935064935064935,
+            "1": 0.7402597402597403,
+            "3": 0.922077922077922,
+            "5": 0.961038961038961,
             "10": 1.0
           },
-          "mrr": 0.822943722943723,
+          "mrr": 0.8332251082251082,
           "misses": [
-            "q-hr-telework-1@8",
             "q-hr-resignation-1@6",
             "q-cmp-whistleblowing-1@8",
-            "q-hr-onboarding-ops-3@6",
-            "q-sales-discount-1@6"
+            "q-hr-onboarding-ops-3@6"
           ],
-          "ms_per_query": 21.2
+          "ms_per_query": 10.8
         },
         {
           "method": "heading",
@@ -96,7 +93,7 @@
             "q-fin-monthly-close-1",
             "q-sales-crm-rules-2"
           ],
-          "ms_per_query": 25.4
+          "ms_per_query": 17.0
         },
         {
           "method": "vector",
@@ -105,9 +102,9 @@
             "1": 0.4675324675324675,
             "3": 0.6363636363636364,
             "5": 0.7012987012987013,
-            "10": 0.7272727272727273
+            "10": 0.7402597402597403
           },
-          "mrr": 0.5575036075036075,
+          "mrr": 0.5591269841269841,
           "misses": [
             "q-hr-work-rules-1",
             "q-hr-annual-leave-2",
@@ -131,50 +128,46 @@
             "q-it-incident-runbook-1",
             "q-hr-onboarding-ops-3",
             "q-hr-evaluation-2",
-            "q-fin-payment-approval-1"
+            "q-fin-payment-approval-1@8"
           ],
-          "ms_per_query": 25.7
+          "ms_per_query": 12.5
         },
         {
           "method": "terms+heading+trigram",
           "questions": 77,
           "recall": {
-            "1": 0.6753246753246753,
+            "1": 0.6883116883116883,
             "3": 0.8571428571428571,
-            "5": 0.9090909090909091,
+            "5": 0.935064935064935,
             "10": 0.987012987012987
           },
-          "mrr": 0.780148423005566,
+          "mrr": 0.7894248608534323,
           "misses": [
-            "q-hr-telework-1@7",
             "q-hr-resignation-1@6",
             "q-cmp-whistleblowing-1@7",
             "q-injection-it-system-guide-1",
             "q-it-incident-runbook-1@10",
-            "q-fin-payment-approval-2@7",
-            "q-sales-discount-1@7"
+            "q-fin-payment-approval-2@7"
           ],
-          "ms_per_query": 27.1
+          "ms_per_query": 11.5
         },
         {
           "method": "terms+heading+trigram+vector",
           "questions": 77,
           "recall": {
-            "1": 0.6233766233766234,
+            "1": 0.6363636363636364,
             "3": 0.8571428571428571,
-            "5": 0.922077922077922,
+            "5": 0.948051948051948,
             "10": 0.987012987012987
           },
-          "mrr": 0.7436817151102867,
+          "mrr": 0.7519995877138735,
           "misses": [
-            "q-hr-telework-1@7",
             "q-cmp-whistleblowing-1@9",
             "q-injection-it-system-guide-1",
             "q-it-incident-runbook-1@10",
-            "q-fin-payment-approval-2@7",
-            "q-sales-discount-1@6"
+            "q-fin-payment-approval-2@7"
           ],
-          "ms_per_query": 21.7
+          "ms_per_query": 14.6
         }
       ],
       "acl_audit": {
@@ -191,21 +184,20 @@
           "questions": 77,
           "recall": {
             "1": 0.35064935064935066,
-            "3": 0.5064935064935064,
-            "5": 0.5844155844155844,
-            "10": 0.6493506493506493
+            "3": 0.5324675324675324,
+            "5": 0.5974025974025974,
+            "10": 0.6623376623376623
           },
-          "mrr": 0.4400948258091114,
+          "mrr": 0.4483199340342197,
           "misses": [
-            "q-hr-work-rules-1@6",
             "q-hr-annual-leave-2@6",
             "q-hr-nursing-care-leave-1",
-            "q-hr-telework-1",
             "q-hr-side-job-1",
             "q-hr-side-job-2",
             "q-hr-resignation-1",
             "q-hr-commute-allowance-1",
             "q-fin-expense-1",
+            "q-fin-expense-2@6",
             "q-ga-condolence-1",
             "q-ga-condolence-2",
             "q-hr-training-support-1",
@@ -230,26 +222,24 @@
             "q-fin-payment-approval-2",
             "q-sales-discount-1"
           ],
-          "ms_per_query": 13.8
+          "ms_per_query": 21.5
         },
         {
           "method": "terms",
           "questions": 77,
           "recall": {
-            "1": 0.7272727272727273,
-            "3": 0.9090909090909091,
-            "5": 0.935064935064935,
+            "1": 0.7402597402597403,
+            "3": 0.922077922077922,
+            "5": 0.961038961038961,
             "10": 1.0
           },
-          "mrr": 0.822943722943723,
+          "mrr": 0.8332251082251082,
           "misses": [
-            "q-hr-telework-1@8",
             "q-hr-resignation-1@6",
             "q-cmp-whistleblowing-1@8",
-            "q-hr-onboarding-ops-3@6",
-            "q-sales-discount-1@6"
+            "q-hr-onboarding-ops-3@6"
           ],
-          "ms_per_query": 12.0
+          "ms_per_query": 22.7
         },
         {
           "method": "heading",
@@ -275,66 +265,63 @@
             "q-fin-monthly-close-1",
             "q-sales-crm-rules-2"
           ],
-          "ms_per_query": 12.1
+          "ms_per_query": 20.1
         },
         {
           "method": "vector",
           "questions": 77,
           "recall": {
-            "1": 0.6883116883116883,
+            "1": 0.6753246753246753,
             "3": 0.8441558441558441,
-            "5": 0.9090909090909091,
-            "10": 0.935064935064935
+            "5": 0.922077922077922,
+            "10": 0.974025974025974
           },
-          "mrr": 0.7753555967841682,
+          "mrr": 0.777396413110699,
           "misses": [
-            "q-hr-work-rules-1",
+            "q-hr-work-rules-1@6",
             "q-cmp-whistleblowing-1",
             "q-sec-policy-2",
             "q-it-account-ops-1@7",
-            "q-exec-compensation-1@7",
-            "q-exec-compensation-3",
-            "q-sales-crm-rules-2"
+            "q-exec-compensation-3@10",
+            "q-sales-crm-rules-2@6"
           ],
-          "ms_per_query": 14.6
+          "ms_per_query": 13.9
         },
         {
           "method": "terms+heading+trigram",
           "questions": 77,
           "recall": {
-            "1": 0.6753246753246753,
+            "1": 0.6883116883116883,
             "3": 0.8571428571428571,
-            "5": 0.9090909090909091,
+            "5": 0.935064935064935,
             "10": 0.987012987012987
           },
-          "mrr": 0.780148423005566,
+          "mrr": 0.7894248608534323,
           "misses": [
-            "q-hr-telework-1@7",
             "q-hr-resignation-1@6",
             "q-cmp-whistleblowing-1@7",
             "q-injection-it-system-guide-1",
             "q-it-incident-runbook-1@10",
-            "q-fin-payment-approval-2@7",
-            "q-sales-discount-1@7"
+            "q-fin-payment-approval-2@7"
           ],
-          "ms_per_query": 18.4
+          "ms_per_query": 13.0
         },
         {
           "method": "terms+heading+trigram+vector",
           "questions": 77,
           "recall": {
-            "1": 0.7532467532467533,
-            "3": 0.9090909090909091,
+            "1": 0.7662337662337663,
+            "3": 0.922077922077922,
             "5": 0.961038961038961,
             "10": 1.0
           },
-          "mrr": 0.8469851576994436,
+          "mrr": 0.8545609152752011,
           "misses": [
             "q-cmp-whistleblowing-1@6",
             "q-injection-it-system-guide-1@8",
             "q-it-incident-runbook-1@7"
           ],
-          "ms_per_query": 17.7
+          "ms_per_query": 14.0
         }
       ],
       "acl_audit": {
