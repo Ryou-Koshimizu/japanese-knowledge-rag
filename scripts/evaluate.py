@@ -338,6 +338,38 @@ def run_replay() -> int:
     return 0 if summary["all_ok"] == summary["questions"] else 1
 
 
+def run_regrade(note: str) -> int:
+    """記録した回答（AIの出力・照合の結果）はそのままに、今の評価セットの基準で採点し直す。
+
+    AIを呼び直さない。質問の文と聞いた人が記録と一致することを確かめ、
+    採点し直した日時と理由を記録に残す。
+    """
+    path = EVIDENCE / "answers.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    questions = {q.id: q for q in load_questions(QUESTIONS)}
+    grades = []
+    for row in data["rows"]:
+        q = questions[row["id"]]
+        if (q.question, q.persona) != (row["question"], row["persona"]):
+            raise SystemExit(f"{q.id}: 質問の文か聞いた人が記録と違うため、採点し直せません")
+        grade = grade_answer(q, _result_from_row(row))
+        row["grade"] = asdict(grade)
+        grades.append(grade)
+    if len(grades) != len(questions):
+        raise SystemExit("記録の問数が評価セットと違います")
+    summary = summarize_grades(grades)
+    data["summary"] = summary
+    data["questions_sha"] = digest(QUESTIONS)
+    data.setdefault("regrades", []).append(
+        {"at": datetime.now(UTC).isoformat(timespec="seconds"), "note": note}
+    )
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({k: v for k, v in summary.items() if k != "failures"}, ensure_ascii=False))
+    for failure in summary["failures"]:
+        print("NG", failure)
+    return 0 if summary["all_ok"] == summary["questions"] else 1
+
+
 def run_summary() -> int:
     """画面の奥付と README に載せる数字を、測定の記録から1つにまとめる。"""
     retrieval = json.loads((EVIDENCE / "retrieval.json").read_text())
@@ -486,6 +518,8 @@ def main() -> int:
     p.add_argument("--only", nargs="*")
     sub.add_parser("replay")
     sub.add_parser("summary")
+    p = sub.add_parser("regrade")
+    p.add_argument("--note", required=True)
     args = parser.parse_args()
     if args.cmd == "retrieval":
         return run_retrieval(args.embedders)
@@ -493,6 +527,8 @@ def main() -> int:
         return run_answers(args.answerer, args.workers, args.only)
     if args.cmd == "summary":
         return run_summary()
+    if args.cmd == "regrade":
+        return run_regrade(args.note)
     return run_replay()
 
 

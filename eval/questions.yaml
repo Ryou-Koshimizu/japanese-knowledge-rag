@@ -175,6 +175,9 @@
   - - 翌月5営業日
     - 翌月の5営業日
     - 翌月第5営業日
+    - 今月の5営業日
+    - 今月5営業日
+    - 今月の第5営業日
 - id: q-fin-expense-2
   persona: dev-manager
   type: answer

@@ -1,6 +1,6 @@
 {
  "model": "codex:gpt-6.1-sol",
- "recorded_at": "2026-10-20T11:26:16+00:00",
+ "recorded_at": "2026-10-20T16:13:16+00:00",
  "note": "実AIで記録した回答。公開デモはこれを再生する（AIを呼ばない）。",
  "entries": [
   {
@@ -18,26 +18,26 @@
    ],
    "raw": {
     "found": true,
-    "answer": "本社の定時は9:00から18:00までです。休憩は12:00〜13:00です。[S1]",
+    "answer": "本社の定時は9:00から18:00までで、休憩は12:00〜13:00です。[S1]",
     "citations": [
      {
       "source": "S1",
-      "quote": "| 本社 | 9:00 | 18:00 | 12:00〜13:00 |"
+      "quote": "本社 | 9:00 | 18:00 | 12:00〜13:00"
      }
     ]
    },
-   "input_tokens": 7847,
-   "output_tokens": 86,
-   "seconds": 7.03
+   "input_tokens": 7905,
+   "output_tokens": 84,
+   "seconds": 7.87
   },
   {
    "persona": "dev-manager",
    "question": "懲戒で出勤停止にする場合、最長で何日までですか？",
    "context": [
     "hr-work-rules#11",
+    "hr-annual-leave#2",
     "hr-work-rules#7",
     "hr-side-job#11",
-    "hr-annual-leave#2",
     "hr-work-rules#6",
     "hr-work-rules#12",
     "hr-work-rules#8",
@@ -45,17 +45,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "懲戒による出勤停止は、最長で14日です。[S1]\n出勤停止の間の賃金は支給されません。[S1]",
+    "answer": "懲戒による出勤停止は、最長14日です。[S1] 出勤停止の間の賃金は支給されません。[S1]",
     "citations": [
      {
       "source": "S1",
-      "quote": "14日以内の期間を定めて出勤を停止し、その間の賃金は支給しない"
+      "quote": "出勤停止 | 14日以内の期間を定めて出勤を停止し、その間の賃金は支給しない"
      }
     ]
    },
-   "input_tokens": 7893,
-   "output_tokens": 95,
-   "seconds": 8.52
+   "input_tokens": 7911,
+   "output_tokens": 98,
+   "seconds": 5.7
   },
   {
    "persona": "it-staff",
@@ -72,7 +72,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "時間単位の年休は、1年度につき5日分（40時間）まで使えます。[S1] 取得は1時間単位で、1時間未満の端数では取得できません。[S1]",
+    "answer": "時間単位の年休は、1年度につき5日分（40時間）まで使えます。[S1]\n取得は1時間単位で、1時間未満の端数では取得できません。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -80,9 +80,9 @@
      }
     ]
    },
-   "input_tokens": 7728,
+   "input_tokens": 7790,
    "output_tokens": 121,
-   "seconds": 8.06
+   "seconds": 6.07
   },
   {
    "persona": "sales-staff",
@@ -107,9 +107,9 @@
      }
     ]
    },
-   "input_tokens": 7616,
+   "input_tokens": 7738,
    "output_tokens": 122,
-   "seconds": 8.27
+   "seconds": 5.81
   },
   {
    "persona": "sales-staff",
@@ -126,7 +126,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "育児休業は、子が1歳に達する日までの間で、本人が申し出た期間に取得できます。[S1] 保育所に入所できない等の事情がある場合は1歳6か月まで、なお事情が続く場合は2歳まで延長できます。[S1]",
+    "answer": "育児休業は、子が1歳に達する日までの間で、本人が申し出た期間取得できます。[S1] 保育所に入所できない等の事情がある場合は1歳6か月まで、なお事情が続く場合は2歳まで延長できます。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -138,9 +138,9 @@
      }
     ]
    },
-   "input_tokens": 7594,
-   "output_tokens": 175,
-   "seconds": 9.1
+   "input_tokens": 7648,
+   "output_tokens": 174,
+   "seconds": 8.6
   },
   {
    "persona": "acct-manager",
@@ -157,7 +157,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "育児短時間勤務は、子どもが小学校3年生修了まで利用できます。[S1] 会社は、法令の3歳未満より対象を広げています。[S1]",
+    "answer": "育児短時間勤務は、子どもが小学校3年生修了まで利用できます。会社は、法令の対象である3歳未満より対象を広げています。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -165,9 +165,9 @@
      }
     ]
    },
-   "input_tokens": 7685,
-   "output_tokens": 130,
-   "seconds": 7.14
+   "input_tokens": 7777,
+   "output_tokens": 129,
+   "seconds": 7.1
   },
   {
    "persona": "executive",
@@ -192,9 +192,9 @@
      }
     ]
    },
-   "input_tokens": 7638,
+   "input_tokens": 7690,
    "output_tokens": 99,
-   "seconds": 7.06
+   "seconds": 5.18
   },
   {
    "persona": "hr-staff",
@@ -211,7 +211,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "介護休業の申出は、休業開始予定日の2週間前までに行ってください。[S1] ワークフローシステムで「介護休業申出書」を提出します。[S1]",
+    "answer": "介護休業の申出は、休業開始予定日の2週間前までに、ワークフローシステムで「介護休業申出書」を提出してください。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -219,9 +219,9 @@
      }
     ]
    },
-   "input_tokens": 7632,
-   "output_tokens": 121,
-   "seconds": 7.38
+   "input_tokens": 7726,
+   "output_tokens": 115,
+   "seconds": 5.35
   },
   {
    "persona": "dev-manager",
@@ -238,7 +238,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "在宅勤務は、1週間につき3日が上限です。ただし、入社後3か月を経過し6か月に満たない社員は1週間につき1日までで、部署の業務の状況により所属長がさらに日数を制限できます。[S3]\n介護をする社員は、所属長と人事部の承認を得て、上限にかかわらず追加で利用できます。[S7]",
+    "answer": "在宅勤務は、1週間につき3日が上限です。ただし、入社後3か月を経過し6か月に満たない社員は、1週間につき1日までで、部署の業務の状況により所属長がさらに日数を制限する場合があります。[S3]\n介護をする社員は、所属長と人事部の承認を得て、上限にかかわらず追加で利用できます。[S7]",
     "citations": [
      {
       "source": "S3",
@@ -254,9 +254,9 @@
      }
     ]
    },
-   "input_tokens": 7808,
-   "output_tokens": 278,
-   "seconds": 9.43
+   "input_tokens": 7847,
+   "output_tokens": 281,
+   "seconds": 8.63
   },
   {
    "persona": "it-staff",
@@ -273,7 +273,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "テレワークを月4日以上行った社員には、在宅勤務手当として月額3,000円が支給され、月4日未満の場合は支給されません。[S1] 手当は勤怠システムの実績をもとに翌月の給与で支給されます。[S1]",
+    "answer": "テレワークを月4日以上行った場合、在宅勤務手当は月額3,000円です。月4日未満の場合は支給されません。[S1]\n勤怠システムの実績をもとに、翌月の給与で支給されます。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -285,9 +285,9 @@
      }
     ]
    },
-   "input_tokens": 7694,
-   "output_tokens": 182,
-   "seconds": 9.52
+   "input_tokens": 7733,
+   "output_tokens": 177,
+   "seconds": 7.26
   },
   {
    "persona": "hr-staff",
@@ -298,23 +298,27 @@
     "hr-side-job#3",
     "hr-side-job#8",
     "hr-side-job#12",
-    "hr-side-job#9",
     "hr-side-job#0",
+    "hr-side-job#9",
     "hr-resignation#2"
    ],
    "raw": {
     "found": true,
-    "answer": "開始予定日の30日前までに届け出てください。[S1] ワークフローシステムで「副業・兼業届」を提出します。[S1]",
+    "answer": "開始予定日の30日前までに、ワークフローシステムで「副業・兼業届」を提出してください。[S1] 届出には、副業先の名称、業務内容、雇用か業務委託かの別、予定する曜日と時間帯、1か月の見込み時間を記入します。[S1]",
     "citations": [
      {
       "source": "S1",
       "quote": "副業を始めようとする社員は、開始予定日の30日前までに、ワークフローシステムで「副業・兼業届」を提出する。"
+     },
+     {
+      "source": "S1",
+      "quote": "届出には、副業先の名称、業務内容、雇用か業務委託かの別、予定する曜日と時間帯、1か月の見込み時間を記入する。"
      }
     ]
    },
-   "input_tokens": 7577,
-   "output_tokens": 106,
-   "seconds": 7.19
+   "input_tokens": 7669,
+   "output_tokens": 201,
+   "seconds": 7.38
   },
   {
    "persona": "dev-manager",
@@ -331,7 +335,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "雇用契約による副業の労働時間は、1週間につき15時間以内です。[S1] 22時から翌朝5時までの深夜の時間帯に副業をしてはなりません。[S1]",
+    "answer": "雇用契約による副業の労働時間は、1週間につき15時間以内です。[S1] また、22時から翌朝5時までの深夜の時間帯に副業をしてはなりません。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -339,9 +343,9 @@
      }
     ]
    },
-   "input_tokens": 7666,
-   "output_tokens": 136,
-   "seconds": 7.29
+   "input_tokens": 7756,
+   "output_tokens": 137,
+   "seconds": 6.37
   },
   {
    "persona": "acct-manager",
@@ -366,9 +370,9 @@
      }
     ]
    },
-   "input_tokens": 7710,
+   "input_tokens": 7783,
    "output_tokens": 86,
-   "seconds": 8.53
+   "seconds": 5.64
   },
   {
    "persona": "it-staff",
@@ -385,7 +389,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "退職届で離職票を「要」とした場合、退職日から2週間程度で自宅へ郵送されます。[S1] 59歳以上で退職する方には、希望の有無にかかわらず交付されます。[S1]",
+    "answer": "退職届で離職票を「要」とした場合、退職日から2週間程度で自宅へ郵送されます。[S1]\n59歳以上で退職する方には、希望の有無にかかわらず交付されます。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -397,9 +401,9 @@
      }
     ]
    },
-   "input_tokens": 7625,
+   "input_tokens": 7719,
    "output_tokens": 182,
-   "seconds": 8.27
+   "seconds": 7.47
   },
   {
    "persona": "executive",
@@ -416,21 +420,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "通勤手当の上限は、自家用車・自転車による通勤を含めて月額50,000円です。[S5] 新幹線・特急料金は支給されません。[S5]",
+    "answer": "通勤手当の場合、上限は自家用車・自転車による通勤を含めて月額50,000円です。[S5] 6か月分で支給する場合は300,000円が上限で、新幹線・特急料金は支給されません。[S5]",
     "citations": [
      {
       "source": "S5",
-      "quote": "通勤手当の上限は、自家用車・自転車による通勤を含めて月額50,000円とする。"
-     },
-     {
-      "source": "S5",
-      "quote": "新幹線・特急料金は支給しない。"
+      "quote": "通勤手当の上限は、自家用車・自転車による通勤を含めて月額50,000円とする。6か月分で支給する場合は300,000円を上限とする。新幹線・特急料金は支給しない。"
      }
     ]
    },
-   "input_tokens": 7666,
-   "output_tokens": 230,
-   "seconds": 11.0
+   "input_tokens": 7724,
+   "output_tokens": 170,
+   "seconds": 12.18
   },
   {
    "persona": "sales-staff",
@@ -447,7 +447,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "引っ越しによる通勤経路の届出は、その事実が生じた日から10日以内に必要です。[S1] ワークフローシステムで「通勤経路届」を提出してください。[S1]",
+    "answer": "引っ越した日から10日以内に、ワークフローシステムで「通勤経路届」を提出する必要があります。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -455,9 +455,9 @@
      }
     ]
    },
-   "input_tokens": 7583,
-   "output_tokens": 135,
-   "seconds": 7.47
+   "input_tokens": 7656,
+   "output_tokens": 115,
+   "seconds": 5.75
   },
   {
    "persona": "sales-staff",
@@ -474,7 +474,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "先月立て替えた経費は、支出した日の属する月の翌月5営業日までに申請してください。[S2] 期限を過ぎた場合は、所属長の理由書を添付した場合に限り、支出日から3か月以内であれば受け付けられます。[S2]",
+    "answer": "先月立て替えた経費は、今月の5営業日までに申請してください。[S2] 期限を過ぎた場合は、所属長の理由書を添付し、支出日から3か月以内であれば受け付けられます。[S2]",
     "citations": [
      {
       "source": "S2",
@@ -486,9 +486,9 @@
      }
     ]
    },
-   "input_tokens": 7597,
-   "output_tokens": 188,
-   "seconds": 10.05
+   "input_tokens": 7666,
+   "output_tokens": 177,
+   "seconds": 6.96
   },
   {
    "persona": "dev-manager",
@@ -505,7 +505,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "取引先との飲食を伴う接待は、参加者1人あたりの上限は1万円で、これを超える場合は部長の事前承認が必要です。[S1]\nまた、事前に経費精算システムで「接待申請」を行い、所属長の承認を得る必要があります。[S1]",
+    "answer": "取引先との飲食を伴う接待は、参加者1人あたりの上限が1万円です。1万円を超える場合は部長の事前承認が必要です。[S1]\nまた、金額にかかわらず、事前に経費精算システムで「接待申請」を行い、所属長の承認を得る必要があります。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -517,9 +517,9 @@
      }
     ]
    },
-   "input_tokens": 7667,
-   "output_tokens": 197,
-   "seconds": 8.56
+   "input_tokens": 7740,
+   "output_tokens": 206,
+   "seconds": 7.47
   },
   {
    "persona": "sales-staff",
@@ -536,7 +536,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "一般社員の宿泊費は、東京23区なら1泊あたり12,000円、東京23区以外なら10,000円を上限として実費が支給されます。[S2] 上限を超えた分は自己負担ですが、展示会の開催時期などで上限内の宿泊先が確保できない場合は、所属長の承認を得て実費が支給されます。[S2]",
+    "answer": "一般社員の宿泊費は、1泊あたり東京23区の場合は12,000円、東京都内のその他の地域の場合は10,000円を上限として、実費が支給されます。[S2] 上限を超えた分は自己負担ですが、展示会の開催時期などで上限内の宿泊先が確保できない場合は、所属長の承認を得て実費が支給されます。[S2]",
     "citations": [
      {
       "source": "S2",
@@ -548,9 +548,9 @@
      }
     ]
    },
-   "input_tokens": 7834,
-   "output_tokens": 327,
-   "seconds": 12.81
+   "input_tokens": 7920,
+   "output_tokens": 314,
+   "seconds": 10.49
   },
   {
    "persona": "dev-manager",
@@ -567,7 +567,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "海外出張の申請は、出発日の1か月前までに行う必要があります。[S1]\n所属長に加えて担当役員の承認が必要です。[S1]",
+    "answer": "海外出張の申請は、出発日の1か月前までに行う必要があります。[S1] 所属長に加えて担当役員の承認が必要です。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -579,9 +579,9 @@
      }
     ]
    },
-   "input_tokens": 7693,
+   "input_tokens": 7766,
    "output_tokens": 131,
-   "seconds": 7.38
+   "seconds": 5.98
   },
   {
    "persona": "it-staff",
@@ -610,9 +610,9 @@
      }
     ]
    },
-   "input_tokens": 7825,
+   "input_tokens": 7862,
    "output_tokens": 195,
-   "seconds": 9.64
+   "seconds": 7.4
   },
   {
    "persona": "hr-staff",
@@ -637,9 +637,9 @@
      }
     ]
    },
-   "input_tokens": 7720,
+   "input_tokens": 7763,
    "output_tokens": 135,
-   "seconds": 8.94
+   "seconds": 6.21
   },
   {
    "persona": "it-staff",
@@ -668,9 +668,9 @@
      }
     ]
    },
-   "input_tokens": 7621,
+   "input_tokens": 7696,
    "output_tokens": 147,
-   "seconds": 8.35
+   "seconds": 6.78
   },
   {
    "persona": "executive",
@@ -687,7 +687,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "自ら希望して申請し承認された外部セミナーは、受講料の80%が補助されます。[S2] 自己啓発の補助は、1人あたり年度（4月1日から翌年3月31日まで）の合計で15万円が上限です。[S2]",
+    "answer": "自ら希望して申請し承認された外部セミナーは、受講料の80%が補助されます。自己啓発の補助は、1人あたり年度（4月1日から翌年3月31日まで）の合計で15万円が上限です。[S2]",
     "citations": [
      {
       "source": "S2",
@@ -699,9 +699,9 @@
      }
     ]
    },
-   "input_tokens": 7734,
-   "output_tokens": 179,
-   "seconds": 7.83
+   "input_tokens": 7847,
+   "output_tokens": 175,
+   "seconds": 7.09
   },
   {
    "persona": "acct-manager",
@@ -726,9 +726,9 @@
      }
     ]
    },
-   "input_tokens": 7798,
+   "input_tokens": 7852,
    "output_tokens": 118,
-   "seconds": 7.94
+   "seconds": 9.51
   },
   {
    "persona": "sales-staff",
@@ -745,21 +745,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "本社で最初に集まる一次避難場所は、本社北側の第2駐車場です。[S1]\n一次避難場所に着いたら、防災リーダーが所属の名簿で点呼を行います。[S2]",
+    "answer": "本社で避難するとき、最初に集まる一次避難場所は「本社北側の第2駐車場」です。[S1]\n広域避難場所は「市立みなみ台公園」です。[S1]",
     "citations": [
      {
       "source": "S1",
-      "quote": "| 本社 | 本社北側の第2駐車場 | 市立みなみ台公園 |"
-     },
-     {
-      "source": "S2",
-      "quote": "一次避難場所に着いたら、防災リーダーが所属の名簿で点呼を行い、避難から15分以内に人数と負傷者の有無を災害対策本部へ報告する。"
+      "quote": "本社 | 本社北側の第2駐車場 | 市立みなみ台公園"
      }
     ]
    },
-   "input_tokens": 7743,
-   "output_tokens": 180,
-   "seconds": 8.5
+   "input_tokens": 7802,
+   "output_tokens": 111,
+   "seconds": 6.11
   },
   {
    "persona": "dev-manager",
@@ -776,21 +772,21 @@
    ],
    "raw": {
     "found": true,
-    "answer": "人間ドックの補助は、1人あたり年1回、3万円までです。[S1] 満35歳以上の社員が、定期健康診断の代わりに受診できます。[S1]",
+    "answer": "満35歳以上の社員が定期健康診断の代わりに人間ドックを受診する場合、会社は1人あたり年1回、3万円まで補助します。[S1] 申し込みは4月1日から4月30日までに社内ポータルで行います。[S1]",
     "citations": [
      {
       "source": "S1",
-      "quote": "会社は1人あたり年1回、3万円まで補助する。"
+      "quote": "満35歳以上の社員は、定期健康診断の代わりに人間ドックを受診できる。会社は1人あたり年1回、3万円まで補助する。"
      },
      {
       "source": "S1",
-      "quote": "満35歳以上の社員は、定期健康診断の代わりに人間ドックを受診できる。"
+      "quote": "申し込みは4月1日から4月30日までに社内ポータル（https://portal.soranome.example/hr/kenshin）で行う。"
      }
     ]
    },
-   "input_tokens": 7691,
-   "output_tokens": 136,
-   "seconds": 7.99
+   "input_tokens": 7751,
+   "output_tokens": 194,
+   "seconds": 7.85
   },
   {
    "persona": "hr-staff",
@@ -807,17 +803,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "自社の計測機器は、社員割引で購入できます。[S1] 割引は定価の30%引きです。[S1]",
+    "answer": "自社の計測機器は、社員割引で定価の30%引き（3割引き）で購入できます。[S1] 購入できるのは1人あたり年度に3台までで、転売は禁止です。[S1]",
     "citations": [
      {
       "source": "S1",
-      "quote": "自社の計測機器は、定価の30%引きで購入できる。"
+      "quote": "自社の計測機器は、定価の30%引きで購入できる。購入できるのは1人あたり年度に3台までとし、転売してはならない。"
      }
     ]
    },
-   "input_tokens": 7936,
-   "output_tokens": 87,
-   "seconds": 6.44
+   "input_tokens": 7994,
+   "output_tokens": 135,
+   "seconds": 6.04
   },
   {
    "persona": "acct-manager",
@@ -850,9 +846,9 @@
      }
     ]
    },
-   "input_tokens": 8052,
+   "input_tokens": 8106,
    "output_tokens": 200,
-   "seconds": 8.64
+   "seconds": 7.0
   },
   {
    "persona": "it-staff",
@@ -869,7 +865,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "機密区分の表示がない資料は、社外秘として扱います。[S1] 社外秘の文書を閲覧できるのは社員のみです。[S2]",
+    "answer": "機密区分の表示がない資料は、社外秘として扱います。[S1] 閲覧できる範囲は社員のみです。[S2]",
     "citations": [
      {
       "source": "S1",
@@ -881,9 +877,9 @@
      }
     ]
    },
-   "input_tokens": 8130,
-   "output_tokens": 126,
-   "seconds": 6.67
+   "input_tokens": 8220,
+   "output_tokens": 122,
+   "seconds": 7.15
   },
   {
    "persona": "sales-staff",
@@ -900,7 +896,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "はい、通報は匿名でも受け付けます。[S6]\n匿名で通報する場合は、通報フォームが発行する受付番号と合言葉を控えてください。受付番号で通報後の進み具合を確認できますが、匿名では事実の確認が難しく、調査に限界がある場合があります。[S6]",
+    "answer": "はい、通報は匿名でも受け付けます。[S6]\n匿名で通報する場合は、通報フォームが発行する受付番号と合言葉を控えてください。受付番号で進み具合を確認できますが、匿名では事実の確認が難しく、調査に限界がある場合があります。[S6]",
     "citations": [
      {
       "source": "S6",
@@ -912,9 +908,9 @@
      }
     ]
    },
-   "input_tokens": 7662,
-   "output_tokens": 213,
-   "seconds": 8.76
+   "input_tokens": 7756,
+   "output_tokens": 209,
+   "seconds": 6.97
   },
   {
    "persona": "executive",
@@ -939,9 +935,9 @@
      }
     ]
    },
-   "input_tokens": 7564,
+   "input_tokens": 7618,
    "output_tokens": 116,
-   "seconds": 8.17
+   "seconds": 5.8
   },
   {
    "persona": "sales-staff",
@@ -958,11 +954,11 @@
    ],
    "raw": {
     "found": true,
-    "answer": "端末の紛失の疑いも、発見から1時間以内にヘルプデスク窓口（内線 4100）と所属長に第一報を入れる必要があります。[S2] ヘルプデスクの受付時間外は、所属長への連絡を優先し、あわせて社内ポータルの問い合わせフォームに記録を残してください。[S2] 第一報の後、24時間以内にワークフローシステムで「インシデント報告書」を提出します。[S2]",
+    "answer": "紛失の疑いでも、発見から1時間以内にヘルプデスク窓口（内線 4100）と所属長に第一報を入れてください。[S2] ヘルプデスクの受付時間外は、所属長への連絡を優先し、あわせて社内ポータルの問い合わせフォームに記録を残してください。[S2] 第一報の後、24時間以内にワークフローシステムで「インシデント報告書」を提出してください。[S2]",
     "citations": [
      {
       "source": "S2",
-      "quote": "情報セキュリティ上の事故またはその疑い（以下「インシデント」という）を発見したときは、発見から1時間以内にヘルプデスク窓口（内線 4100）と所属長に第一報を入れなければならない。"
+      "quote": "発見から1時間以内にヘルプデスク窓口（内線 4100）と所属長に第一報を入れなければならない。"
      },
      {
       "source": "S2",
@@ -974,9 +970,9 @@
      }
     ]
    },
-   "input_tokens": 7829,
-   "output_tokens": 306,
-   "seconds": 10.15
+   "input_tokens": 7934,
+   "output_tokens": 271,
+   "seconds": 8.86
   },
   {
    "persona": "executive",
@@ -993,7 +989,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "校正データの原本は重要度Aに区分され、社外への持ち出しは原則禁止ですが、情報システム部長の事前承認が必要です。[S4] ワークフローシステムで「情報持ち出し申請」を行い、承認を得てください。[S1]",
+    "answer": "校正データの原本は重要度Aに該当し、社外への持ち出しは原則禁止で、情報システム部長の事前承認が必要です。[S4] ワークフローシステムで「情報持ち出し申請」を行い、承認を得てください。[S1]",
     "citations": [
      {
       "source": "S4",
@@ -1005,9 +1001,9 @@
      }
     ]
    },
-   "input_tokens": 8010,
-   "output_tokens": 219,
-   "seconds": 8.99
+   "input_tokens": 8102,
+   "output_tokens": 220,
+   "seconds": 8.09
   },
   {
    "persona": "hr-staff",
@@ -1024,11 +1020,11 @@
    ],
    "raw": {
     "found": true,
-    "answer": "パスワードは12文字以上にする必要があります。[S1]\nシステム管理者権限を持つアカウント（特権ID）は、16文字以上です。[S1]",
+    "answer": "通常のパスワードは12文字以上にする必要があります。[S1]\nシステム管理者権限を持つアカウント（特権ID）の場合は、16文字以上です。[S1]",
     "citations": [
      {
       "source": "S1",
-      "quote": "パスワードは次の条件をすべて満たさなければならない。\n- 12文字以上であること"
+      "quote": "- 12文字以上であること\n- 英大文字、英小文字、数字、記号のうち3種類以上を含むこと"
      },
      {
       "source": "S1",
@@ -1036,9 +1032,9 @@
      }
     ]
    },
-   "input_tokens": 7878,
-   "output_tokens": 175,
-   "seconds": 8.31
+   "input_tokens": 7947,
+   "output_tokens": 181,
+   "seconds": 11.75
   },
   {
    "persona": "acct-manager",
@@ -1055,7 +1051,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "アカウントのロックは、30分後に自動で解除されます。[S1] ただし、同じ日に3回ロックされたアカウントは、情報システム部が不正アクセスの有無を確認するまで解除されません。[S1]",
+    "answer": "通常は30分後に自動で解除されます。[S1]\nただし、同じ日に3回ロックされた場合は、情報システム部が不正アクセスの有無を確認するまで解除されません。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1067,9 +1063,9 @@
      }
     ]
    },
-   "input_tokens": 7970,
-   "output_tokens": 170,
-   "seconds": 7.94
+   "input_tokens": 8047,
+   "output_tokens": 160,
+   "seconds": 6.71
   },
   {
    "persona": "sales-staff",
@@ -1086,21 +1082,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "会社は請求の受付から14日以内に本人へ回答する決まりです。[S1]\n請求を受けた社員は独自に対応せず、窓口である経営企画室（内線 2300、privacy@soranome.example）に引き継ぎます。[S1]",
+    "answer": "会社は、請求の受付から14日以内に本人へ回答する決まりです。[S1]",
     "citations": [
      {
       "source": "S1",
       "quote": "会社は請求の受付から14日以内に本人へ回答する。"
-     },
-     {
-      "source": "S1",
-      "quote": "本人から保有個人データの開示、訂正、利用停止などの請求を受けたときは、受けた社員が独自に対応せず、窓口である経営企画室（内線 2300、privacy@soranome.example）に引き継ぐ。"
      }
     ]
    },
-   "input_tokens": 7774,
-   "output_tokens": 198,
-   "seconds": 9.73
+   "input_tokens": 7830,
+   "output_tokens": 70,
+   "seconds": 6.41
   },
   {
    "persona": "dev-manager",
@@ -1117,7 +1109,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "発見から1時間以内に、所属長と個人情報保護管理者へ報告してください。[S1] あわせて、インシデントとしてヘルプデスク窓口へも連絡してください。[S1]",
+    "answer": "漏えいのおそれを発見した場合は、発見から1時間以内に所属長と個人情報保護管理者へ報告してください。あわせて、ヘルプデスク窓口へも連絡してください。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1129,9 +1121,9 @@
      }
     ]
    },
-   "input_tokens": 7857,
-   "output_tokens": 180,
-   "seconds": 7.91
+   "input_tokens": 7928,
+   "output_tokens": 183,
+   "seconds": 7.87
   },
   {
    "persona": "acct-manager",
@@ -1148,7 +1140,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "相談を受け付けてから3営業日以内に、相談者との初回面談を行います。[S1] 面談では、相談者の希望を確認します。[S1]",
+    "answer": "相談窓口が相談を受け付けてから3営業日以内に、初回面談を行います。[S1] 面談では、相談者の希望を確認します。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1160,9 +1152,9 @@
      }
     ]
    },
-   "input_tokens": 7786,
-   "output_tokens": 140,
-   "seconds": 9.22
+   "input_tokens": 7859,
+   "output_tokens": 142,
+   "seconds": 7.11
   },
   {
    "persona": "it-staff",
@@ -1179,7 +1171,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "セクハラを相談できる社内窓口は人事部で、内線 2150です。[S1]",
+    "answer": "社内窓口（人事部）の内線番号は、内線 2150です。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1187,9 +1179,9 @@
      }
     ]
    },
-   "input_tokens": 7818,
-   "output_tokens": 93,
-   "seconds": 7.32
+   "input_tokens": 7961,
+   "output_tokens": 89,
+   "seconds": 5.32
   },
   {
    "persona": "dev-manager",
@@ -1206,21 +1198,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "代理人は最大3名まで登録できます。[S1]\n本人が「設定」→「代理人設定」で登録します。[S1]",
+    "answer": "代理人は最大3名まで登録できます。有効期間は最長90日です。[S1]",
     "citations": [
      {
       "source": "S1",
       "quote": "代理人は最大3名まで、有効期間は最長90日です。"
-     },
-     {
-      "source": "S1",
-      "quote": "出張や休暇で自分が申請できないときに備えて、本人が「設定」→「代理人設定」で代理人を登録できます。"
      }
     ]
    },
-   "input_tokens": 7845,
-   "output_tokens": 123,
-   "seconds": 8.12
+   "input_tokens": 7918,
+   "output_tokens": 70,
+   "seconds": 5.23
   },
   {
    "persona": "executive",
@@ -1237,21 +1225,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "ヘルプデスクの受付時間は平日9:00〜18:00です。[S2] 時間外は社内ポータルの問い合わせフォームから送ってください。翌営業日9:00から順に対応します。[S2]",
+    "answer": "ヘルプデスクの受付時間は平日9:00〜18:00です。時間外は社内ポータルの問い合わせフォーム（https://portal.soranome.example/helpdesk）から送ってください。[S2]",
     "citations": [
      {
       "source": "S2",
-      "quote": "受付時間は平日9:00〜18:00です。"
-     },
-     {
-      "source": "S2",
-      "quote": "時間外は社内ポータルの問い合わせフォーム（https://portal.soranome.example/helpdesk）から送ってください。翌営業日9:00から順に対応します。"
+      "quote": "受付時間は平日9:00〜18:00です。時間外は社内ポータルの問い合わせフォーム（https://portal.soranome.example/helpdesk）から送ってください。"
      }
     ]
    },
-   "input_tokens": 7787,
-   "output_tokens": 147,
-   "seconds": 8.89
+   "input_tokens": 7896,
+   "output_tokens": 122,
+   "seconds": 5.99
   },
   {
    "persona": "sales-staff",
@@ -1261,9 +1245,9 @@
     "fin-expense#3",
     "fin-expense#14",
     "fin-expense#12",
-    "fin-expense#5",
-    "fin-expense#2",
     "fin-expense#6",
+    "fin-expense#2",
+    "fin-expense#5",
     "it-system-guide#6"
    ],
    "raw": {
@@ -1276,9 +1260,9 @@
      }
     ]
    },
-   "input_tokens": 7616,
+   "input_tokens": 7695,
    "output_tokens": 105,
-   "seconds": 7.3
+   "seconds": 6.25
   },
   {
    "persona": "hr-staff",
@@ -1295,7 +1279,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "領収書のPDFは、1ファイル10MBまで添付できます。[S2] 添付できる形式にはPDFが含まれます。[S2]",
+    "answer": "領収書のPDFは、1ファイル10MBまで添付できます。[S2] なお、1件の申請で添付できる合計は30MBまでです。[S2]",
     "citations": [
      {
       "source": "S2",
@@ -1307,9 +1291,9 @@
      }
     ]
    },
-   "input_tokens": 7786,
-   "output_tokens": 119,
-   "seconds": 8.25
+   "input_tokens": 7863,
+   "output_tokens": 127,
+   "seconds": 6.27
   },
   {
    "persona": "it-staff",
@@ -1326,7 +1310,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "L1の障害では、情報システム部長に15分以内に連絡します。[S7]\n連絡先と期限は、障害のレベルに応じて定められています。[S7]",
+    "answer": "L1の障害の場合、情報システム部長には15分以内に連絡します。[S7]",
     "citations": [
      {
       "source": "S7",
@@ -1334,9 +1318,9 @@
      }
     ]
    },
-   "input_tokens": 7810,
-   "output_tokens": 122,
-   "seconds": 6.75
+   "input_tokens": 7847,
+   "output_tokens": 96,
+   "seconds": 5.52
   },
   {
    "persona": "it-staff",
@@ -1353,7 +1337,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "L2障害の障害報告書は、復旧から5営業日以内に提出します。[S1]\n報告書には、時系列、原因、影響の範囲、再発防止策を書きます。[S1]",
+    "answer": "L2障害の障害報告書は、復旧から5営業日以内に提出します。[S1] 報告書には、時系列、原因、影響の範囲、再発防止策を書きます。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1365,9 +1349,9 @@
      }
     ]
    },
-   "input_tokens": 7753,
+   "input_tokens": 7826,
    "output_tokens": 148,
-   "seconds": 8.0
+   "seconds": 7.84
   },
   {
    "persona": "it-staff",
@@ -1392,9 +1376,9 @@
      }
     ]
    },
-   "input_tokens": 7849,
+   "input_tokens": 7909,
    "output_tokens": 71,
-   "seconds": 6.19
+   "seconds": 4.93
   },
   {
    "persona": "sales-staff",
@@ -1414,9 +1398,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7812,
+   "input_tokens": 7904,
    "output_tokens": 30,
-   "seconds": 5.44
+   "seconds": 4.33
   },
   {
    "persona": "it-staff",
@@ -1433,7 +1417,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "アカウントIDは「sn」に社員番号6桁を続けた形にします。[S1] 例は「sn204517」です。[S1]",
+    "answer": "アカウントIDは「sn」に社員番号6桁を続けた形にします。[S1] 例えば、社員番号が204517の場合は「sn204517」です。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1441,9 +1425,9 @@
      }
     ]
    },
-   "input_tokens": 7705,
-   "output_tokens": 96,
-   "seconds": 6.75
+   "input_tokens": 7793,
+   "output_tokens": 103,
+   "seconds": 5.12
   },
   {
    "persona": "it-staff",
@@ -1468,9 +1452,9 @@
      }
     ]
    },
-   "input_tokens": 7665,
+   "input_tokens": 7808,
    "output_tokens": 76,
-   "seconds": 7.14
+   "seconds": 5.24
   },
   {
    "persona": "it-staff",
@@ -1495,9 +1479,9 @@
      }
     ]
    },
-   "input_tokens": 7602,
+   "input_tokens": 7692,
    "output_tokens": 63,
-   "seconds": 6.91
+   "seconds": 4.85
   },
   {
    "persona": "acct-manager",
@@ -1517,9 +1501,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7739,
+   "input_tokens": 7772,
    "output_tokens": 30,
-   "seconds": 8.85
+   "seconds": 4.79
   },
   {
    "persona": "dev-manager",
@@ -1536,17 +1520,21 @@
    ],
    "raw": {
     "found": true,
-    "answer": "本番反映は、火曜日・水曜日・木曜日の10:00〜16:00に行います。ただし、月曜日、金曜日、祝日の前日、月末の最終営業日は反映せず、12月25日から1月7日までは反映を止める期間です。[S1]",
+    "answer": "本番反映は、火曜日・水曜日・木曜日の10:00〜16:00に行えます。ただし、祝日の前日、月末の最終営業日、12月25日から1月7日までは反映できません。[S1]\n本番の障害を直すための変更に限り、開発部長の承認を受ければ、上記の曜日と時間以外でも反映できます。[S2]",
     "citations": [
      {
       "source": "S1",
       "quote": "本番反映は、火曜日・水曜日・木曜日の10:00〜16:00に行います。月曜日、金曜日、祝日の前日、月末の最終営業日は反映しません。また、12月25日から1月7日までは反映を止める期間とします。"
+     },
+     {
+      "source": "S2",
+      "quote": "本番の障害を直すための変更に限り、開発部長の承認を受ければ、3.1の曜日と時間以外でも反映できます。"
      }
     ]
    },
-   "input_tokens": 7564,
-   "output_tokens": 176,
-   "seconds": 8.17
+   "input_tokens": 7637,
+   "output_tokens": 256,
+   "seconds": 8.38
   },
   {
    "persona": "dev-manager",
@@ -1557,8 +1545,8 @@
     "it-system-guide#10",
     "dev-release#5",
     "hr-side-job#3",
-    "it-system-guide#8",
     "fin-expense#4",
+    "it-system-guide#8",
     "it-system-guide#4"
    ],
    "raw": {
@@ -1575,9 +1563,9 @@
      }
     ]
    },
-   "input_tokens": 7659,
+   "input_tokens": 7687,
    "output_tokens": 190,
-   "seconds": 7.9
+   "seconds": 9.46
   },
   {
    "persona": "dev-manager",
@@ -1587,14 +1575,14 @@
     "dev-release#10",
     "dev-release#12",
     "dev-release#13",
+    "dev-release#7",
     "dev-release#8",
     "dev-release#0",
-    "hr-evaluation#10",
-    "dev-release#7"
+    "hr-evaluation#10"
    ],
    "raw": {
     "found": true,
-    "answer": "エラー率が0.5%を超えた状態が5分続いたとき、直ちに切り戻します。[S1] 上長の許可を待つ必要はありません。[S1]",
+    "answer": "エラー率が0.5%を超えた状態が5分続いたときは、作業した人の判断で直ちに切り戻します。上長の許可を待つ必要はありません。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1602,9 +1590,9 @@
      }
     ]
    },
-   "input_tokens": 7627,
-   "output_tokens": 140,
-   "seconds": 8.76
+   "input_tokens": 7666,
+   "output_tokens": 145,
+   "seconds": 9.04
   },
   {
    "persona": "sales-staff",
@@ -1624,9 +1612,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7778,
+   "input_tokens": 7819,
    "output_tokens": 30,
-   "seconds": 5.2
+   "seconds": 4.73
   },
   {
    "persona": "hr-staff",
@@ -1635,29 +1623,25 @@
     "hr-onboarding-ops#2",
     "hr-onboarding-ops#4",
     "hr-onboarding-ops#5",
+    "hr-onboarding-ops#6",
     "hr-onboarding-ops#3",
     "hr-onboarding-ops#8",
     "hr-onboarding-ops#10",
-    "hr-onboarding-ops#7",
-    "hr-onboarding-ops#11"
+    "hr-onboarding-ops#7"
    ],
    "raw": {
     "found": true,
-    "answer": "入社書類の提出期限は、入社日の10営業日前です。[S1] 源泉徴収票は年末調整までに提出されればよいとされています。[S2]",
+    "answer": "入社書類の提出期限は、入社日の10営業日前です。[S1]",
     "citations": [
      {
       "source": "S1",
       "quote": "入社書類の提出期限は、入社日の10営業日前とする。"
-     },
-     {
-      "source": "S2",
-      "quote": "源泉徴収票は年末調整までに提出されればよい。"
      }
     ]
    },
-   "input_tokens": 8031,
-   "output_tokens": 119,
-   "seconds": 8.42
+   "input_tokens": 8102,
+   "output_tokens": 69,
+   "seconds": 6.4
   },
   {
    "persona": "hr-staff",
@@ -1674,21 +1658,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "雇用保険の資格取得届は、入社月の翌月5日までに提出します。[S1]\n前職の被保険者番号が不明な場合は、本人に確認したうえで番号なしで届け出ます。[S1]",
+    "answer": "雇用保険の資格取得届は、入社月の翌月5日までに提出します。[S1]",
     "citations": [
      {
       "source": "S1",
       "quote": "雇用保険の資格取得届は、入社月の翌月5日までに提出する。"
-     },
-     {
-      "source": "S1",
-      "quote": "前職の被保険者番号が不明な場合は、本人に確認したうえで番号なしで届け出る。"
      }
     ]
    },
-   "input_tokens": 7526,
-   "output_tokens": 152,
-   "seconds": 7.49
+   "input_tokens": 7633,
+   "output_tokens": 82,
+   "seconds": 4.87
   },
   {
    "persona": "hr-staff",
@@ -1705,11 +1685,11 @@
    ],
    "raw": {
     "found": true,
-    "answer": "初日は9:30に本社1階受付へ来てもらってください。[S4]\nこの集合時刻は初日だけの扱いです。[S4]",
+    "answer": "初日は9:30に、本社1階受付へ来てもらってください。[S4]\nこの集合時刻は初日だけの扱いです。[S4]",
     "citations": [
      {
       "source": "S4",
-      "quote": "| 9:30 | 本社1階受付に集合 | 人事部 |"
+      "quote": "9:30 | 本社1階受付に集合 | 人事部"
      },
      {
       "source": "S4",
@@ -1717,9 +1697,9 @@
      }
     ]
    },
-   "input_tokens": 7925,
-   "output_tokens": 127,
-   "seconds": 8.98
+   "input_tokens": 7986,
+   "output_tokens": 124,
+   "seconds": 6.29
   },
   {
    "persona": "it-staff",
@@ -1727,10 +1707,10 @@
    "context": [
     "hr-training-support#9",
     "hr-resignation#12",
-    "hr-training-support#0",
-    "hr-training-support#8",
     "hr-resignation#6",
+    "hr-training-support#0",
     "hr-training-support#12",
+    "hr-training-support#8",
     "fin-travel#10",
     "hr-training-support#13"
    ],
@@ -1739,9 +1719,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7542,
+   "input_tokens": 7612,
    "output_tokens": 30,
-   "seconds": 7.57
+   "seconds": 4.61
   },
   {
    "persona": "dev-manager",
@@ -1758,7 +1738,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "一次評価の入力期限は、期末翌月の20日までです。[S1]\nワークフローシステムの「人事評価」画面で入力してください。[S1]",
+    "answer": "一次評価は、期末翌月の20日までに入力してください。[S1] 入力はワークフローシステムの「人事評価」画面で行います。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1770,9 +1750,9 @@
      }
     ]
    },
-   "input_tokens": 7888,
-   "output_tokens": 123,
-   "seconds": 7.64
+   "input_tokens": 7927,
+   "output_tokens": 124,
+   "seconds": 5.58
   },
   {
    "persona": "acct-manager",
@@ -1789,7 +1769,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "SとAの合計は、部門の評価対象者の28%以内です。[S1]\n評価対象者が10名未満の部門は、本部単位で合算して目安と照らします。[S1]",
+    "answer": "SとAの合計は、部門の評価対象者の28%以内です。[S1] 評価対象者が10名未満の部門は、本部単位で合算して目安と照らします。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -1801,9 +1781,9 @@
      }
     ]
    },
-   "input_tokens": 7814,
+   "input_tokens": 7887,
    "output_tokens": 141,
-   "seconds": 8.64
+   "seconds": 6.37
   },
   {
    "persona": "executive",
@@ -1828,9 +1808,9 @@
      }
     ]
    },
-   "input_tokens": 7766,
+   "input_tokens": 7839,
    "output_tokens": 90,
-   "seconds": 7.44
+   "seconds": 5.08
   },
   {
    "persona": "sales-staff",
@@ -1850,9 +1830,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7720,
+   "input_tokens": 7774,
    "output_tokens": 30,
-   "seconds": 6.97
+   "seconds": 5.46
   },
   {
    "persona": "hr-staff",
@@ -1869,21 +1849,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "2026年度の冬季賞与の算定係数は、2.35か月です。[S1]\n算定係数の通知を受けるまでは計算に着手しません。[S1]",
+    "answer": "2026年度の冬季賞与の算定係数は、2.35か月です。[S1]",
     "citations": [
      {
       "source": "S1",
-      "quote": "| 冬季賞与 | 2.35か月 |"
-     },
-     {
-      "source": "S1",
-      "quote": "通知を受けるまでは計算に着手しない。"
+      "quote": "夏季賞与 | 2.15か月\n冬季賞与 | 2.35か月"
      }
     ]
    },
-   "input_tokens": 7771,
-   "output_tokens": 117,
-   "seconds": 6.91
+   "input_tokens": 7806,
+   "output_tokens": 79,
+   "seconds": 5.15
   },
   {
    "persona": "hr-staff",
@@ -1908,9 +1884,9 @@
      }
     ]
    },
-   "input_tokens": 7742,
+   "input_tokens": 7815,
    "output_tokens": 85,
-   "seconds": 6.56
+   "seconds": 5.1
   },
   {
    "persona": "hr-staff",
@@ -1918,30 +1894,26 @@
    "context": [
     "hr-payroll-ops#10",
     "hr-payroll-ops#2",
-    "fin-expense#5",
     "hr-payroll-ops#8",
+    "fin-expense#5",
     "fin-expense#4",
-    "fin-expense#11",
     "hr-onboarding-ops#10",
+    "fin-expense#11",
     "hr-resignation#8"
    ],
    "raw": {
     "found": true,
-    "answer": "給与の振込データは、支給日の3営業日前の15時までに経理部へ受け渡してください。[S1]\n月例給与は、支給日の4営業日前までに人事部長の承認を受ける必要があります。[S1]",
+    "answer": "給与の振込データは、支給日の3営業日前の15時までに経理部へ受け渡します。[S1]",
     "citations": [
      {
       "source": "S1",
       "quote": "振込データは、支給日の3営業日前の15時までに経理部へ受け渡す。"
-     },
-     {
-      "source": "S1",
-      "quote": "月例給与は支給日の4営業日前までに人事部長の承認を受ける。"
      }
     ]
    },
-   "input_tokens": 7703,
-   "output_tokens": 151,
-   "seconds": 9.75
+   "input_tokens": 7744,
+   "output_tokens": 88,
+   "seconds": 5.07
   },
   {
    "persona": "sales-staff",
@@ -1961,9 +1933,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7719,
+   "input_tokens": 7790,
    "output_tokens": 30,
-   "seconds": 6.92
+   "seconds": 4.56
   },
   {
    "persona": "executive",
@@ -1973,8 +1945,8 @@
     "exec-compensation#10",
     "exec-compensation#9",
     "exec-compensation#12",
-    "exec-compensation#13",
     "exec-compensation#5",
+    "exec-compensation#13",
     "exec-compensation#16",
     "exec-compensation#0"
    ],
@@ -1984,7 +1956,7 @@
     "citations": [
      {
       "source": "S1",
-      "quote": "| 常務取締役 | 2.20 |\n| 取締役 | 1.75 |"
+      "quote": "常務取締役 | 2.20\n取締役 | 1.75\n監査役 | 1.40"
      },
      {
       "source": "S2",
@@ -1992,9 +1964,9 @@
      }
     ]
    },
-   "input_tokens": 7701,
-   "output_tokens": 241,
-   "seconds": 9.72
+   "input_tokens": 7741,
+   "output_tokens": 302,
+   "seconds": 9.65
   },
   {
    "persona": "executive",
@@ -2011,7 +1983,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "役員報酬の改定は、定時株主総会の日から1か月以内に取締役会で決議します。[S1] 決議の翌月分から適用します。[S1]",
+    "answer": "役員報酬の改定は、定時株主総会の日から1か月以内に取締役会で決議します。[S1] 改定後の報酬額は、決議の翌月分から適用します。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -2019,9 +1991,9 @@
      }
     ]
    },
-   "input_tokens": 7657,
-   "output_tokens": 123,
-   "seconds": 8.2
+   "input_tokens": 7709,
+   "output_tokens": 133,
+   "seconds": 5.74
   },
   {
    "persona": "executive",
@@ -2033,12 +2005,12 @@
     "exec-compensation#9",
     "exec-compensation#13",
     "exec-compensation#15",
-    "exec-compensation#2",
-    "exec-compensation#3"
+    "exec-compensation#3",
+    "exec-compensation#2"
    ],
    "raw": {
     "found": true,
-    "answer": "功労加算は、最大で第11条の基準額の30%以内を上乗せできます。[S1] 対象は在任中に特に功労があった役員で、取締役会の決議が必要です。[S1]",
+    "answer": "功労加算は、第11条の基準額の30%以内まで上乗せできます。[S1] 対象は在任中に特に功労があった役員で、取締役会の決議が必要です。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -2046,9 +2018,9 @@
      }
     ]
    },
-   "input_tokens": 7666,
-   "output_tokens": 139,
-   "seconds": 8.04
+   "input_tokens": 7756,
+   "output_tokens": 136,
+   "seconds": 6.23
   },
   {
    "persona": "dev-manager",
@@ -2068,9 +2040,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7598,
+   "input_tokens": 7620,
    "output_tokens": 30,
-   "seconds": 6.39
+   "seconds": 5.72
   },
   {
    "persona": "acct-manager",
@@ -2087,7 +2059,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "月次の本締めは、原則として翌月の第7営業日です。[S1]\n6月・9月・12月・3月の締めは2営業日後ろにずらすため、翌月の第9営業日です。[S2]",
+    "answer": "通常、月次の本締めは翌月の第7営業日です。[S1]\n6月・9月・12月・3月の締めは2営業日後ろにずらすため、翌月の第9営業日です。[S1][S2]",
     "citations": [
      {
       "source": "S1",
@@ -2103,9 +2075,9 @@
      }
     ]
    },
-   "input_tokens": 7732,
-   "output_tokens": 186,
-   "seconds": 8.12
+   "input_tokens": 7773,
+   "output_tokens": 187,
+   "seconds": 7.64
   },
   {
    "persona": "acct-manager",
@@ -2122,21 +2094,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "振込手数料を差し引いたことによる差額が880円以下なら、支払手数料として処理できます。[S1]\n880円を超える差額は、営業担当を通じて取引先に確認し、翌月の請求に加えるか、別途振り込んでもらいます。[S1]",
+    "answer": "振込手数料を差し引いたことによる差額が880円以下の場合は、支払手数料として処理できます。[S1]",
     "citations": [
      {
       "source": "S1",
       "quote": "取引先が振込手数料を差し引いて入金したことによる差額が880円以下の場合は、支払手数料として処理する。"
-     },
-     {
-      "source": "S1",
-      "quote": "880円を超える差額は、営業担当を通じて取引先に確認し、翌月の請求に加えるか、取引先に別途振り込んでもらう。"
      }
     ]
    },
-   "input_tokens": 7741,
-   "output_tokens": 204,
-   "seconds": 8.16
+   "input_tokens": 7812,
+   "output_tokens": 105,
+   "seconds": 5.54
   },
   {
    "persona": "acct-manager",
@@ -2161,9 +2129,9 @@
      }
     ]
    },
-   "input_tokens": 7690,
+   "input_tokens": 7744,
    "output_tokens": 88,
-   "seconds": 6.76
+   "seconds": 5.41
   },
   {
    "persona": "sales-staff",
@@ -2183,9 +2151,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7709,
+   "input_tokens": 7767,
    "output_tokens": 30,
-   "seconds": 6.42
+   "seconds": 4.69
   },
   {
    "persona": "acct-manager",
@@ -2202,21 +2170,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "支払申請で経理部長が承認する金額は、1件あたり税込50万円以上500万円未満です。[S1]\nしたがって、上限は税込500万円未満です。[S1]",
+    "answer": "支払申請で経理部長が承認するのは、支払1件あたりの税込金額が50万円以上500万円未満の場合です。[S1]",
     "citations": [
      {
       "source": "S1",
-      "quote": "支払1件あたりの税込金額に応じて、次の者が承認する。"
-     },
-     {
-      "source": "S1",
-      "quote": "| 50万円以上500万円未満 | 経理部長 |"
+      "quote": "50万円以上500万円未満 | 経理部長"
      }
     ]
    },
-   "input_tokens": 7813,
-   "output_tokens": 130,
-   "seconds": 8.26
+   "input_tokens": 7842,
+   "output_tokens": 84,
+   "seconds": 6.03
   },
   {
    "persona": "acct-manager",
@@ -2233,7 +2197,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "定例の振込日は毎月5日と20日です。[S2] 振込日が休業日にあたる場合は、その前の営業日です。[S2]",
+    "answer": "定例の振込日は毎月5日と20日です。[S2]\n振込日が休業日にあたる場合は、その前の営業日です。[S2]",
     "citations": [
      {
       "source": "S2",
@@ -2241,9 +2205,9 @@
      }
     ]
    },
-   "input_tokens": 7699,
+   "input_tokens": 7781,
    "output_tokens": 108,
-   "seconds": 6.7
+   "seconds": 5.49
   },
   {
    "persona": "acct-manager",
@@ -2260,7 +2224,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "メールだけでは受け付けず、経理部が取引先マスタに登録済みの電話番号へ折り返し、依頼が本物であることを確認します。[S1] 取引先の押印がある「振込先変更届」を受け取ってからマスタを変更し、変更後はじめての振込は金額にかかわらず経理部長の承認を得ます。[S1]",
+    "answer": "メールだけでは受け付けず、経理部が取引先マスタに登録済みの電話番号へ折り返して依頼が本物か確認し、取引先の押印がある「振込先変更届」を受け取ってからマスタを変更します。[S1] 変更後はじめての振込は、金額にかかわらず経理部長の承認を得ます。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -2276,9 +2240,9 @@
      }
     ]
    },
-   "input_tokens": 7717,
-   "output_tokens": 264,
-   "seconds": 9.53
+   "input_tokens": 7756,
+   "output_tokens": 261,
+   "seconds": 7.54
   },
   {
    "persona": "dev-manager",
@@ -2298,9 +2262,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7566,
-   "output_tokens": 45,
-   "seconds": 10.15
+   "input_tokens": 7660,
+   "output_tokens": 81,
+   "seconds": 6.37
   },
   {
    "persona": "sales-staff",
@@ -2308,8 +2272,8 @@
    "context": [
     "sales-discount#6",
     "sales-discount#4",
-    "sales-discount#5",
     "sales-discount#3",
+    "sales-discount#5",
     "sales-discount#9",
     "sales-discount#8",
     "sales-discount#2",
@@ -2317,11 +2281,11 @@
    ],
    "raw": {
     "found": true,
-    "answer": "10%の値引きには、営業課長の承認が必要です。[S4] ただし、値引き後の粗利率が23%を下回る場合は、値引き率にかかわらず営業担当役員の承認が必要です。[S2]",
+    "answer": "10%の値引きは、営業課長の承認が必要です。[S3]\nただし、値引き後の粗利率が23%を下回る場合は、値引き率にかかわらず営業担当役員の承認が必要です。[S2]",
     "citations": [
      {
-      "source": "S4",
-      "quote": "| 5%超〜12%以下 | 営業課長 |"
+      "source": "S3",
+      "quote": "5%超〜12%以下 | 営業課長"
      },
      {
       "source": "S2",
@@ -2329,9 +2293,9 @@
      }
     ]
    },
-   "input_tokens": 7699,
-   "output_tokens": 160,
-   "seconds": 8.29
+   "input_tokens": 7757,
+   "output_tokens": 157,
+   "seconds": 5.73
   },
   {
    "persona": "sales-staff",
@@ -2348,7 +2312,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "特別価格の有効期限は、原則として見積日から90日です。[S2]\n年間契約の顧客に限り、最長12か月まで認められます。[S2]",
+    "answer": "特別価格の有効期限は、原則として見積日から90日です。年間契約の顧客に限り、最長12か月まで認められます。[S2]",
     "citations": [
      {
       "source": "S2",
@@ -2356,9 +2320,9 @@
      }
     ]
    },
-   "input_tokens": 7595,
-   "output_tokens": 123,
-   "seconds": 7.72
+   "input_tokens": 7670,
+   "output_tokens": 119,
+   "seconds": 5.84
   },
   {
    "persona": "sales-staff",
@@ -2375,7 +2339,7 @@
    ],
    "raw": {
     "found": true,
-    "answer": "値引き後の粗利率が23%を下回ると、値引き率にかかわらず営業担当役員の承認が必要です。[S1]\n粗利率は、顧客管理システムの見積画面に表示される値で判断します。[S1]",
+    "answer": "値引き後の粗利率が23%を下回る場合は、値引き率にかかわらず営業担当役員の承認が必要です。[S1] 粗利率は、顧客管理システムの見積画面に表示される値で判断します。[S1]",
     "citations": [
      {
       "source": "S1",
@@ -2387,9 +2351,9 @@
      }
     ]
    },
-   "input_tokens": 7729,
-   "output_tokens": 174,
-   "seconds": 8.0
+   "input_tokens": 7819,
+   "output_tokens": 175,
+   "seconds": 6.46
   },
   {
    "persona": "dev-manager",
@@ -2409,9 +2373,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7772,
+   "input_tokens": 7860,
    "output_tokens": 30,
-   "seconds": 5.78
+   "seconds": 4.84
   },
   {
    "persona": "sales-staff",
@@ -2433,23 +2397,19 @@
      {
       "source": "S1",
       "quote": "直行直帰や出張などで当日に入力できなかった場合は、翌営業日の午前10時までに入力する。"
-     },
-     {
-      "source": "S1",
-      "quote": "期限を過ぎた日報は、システム上「遅延」と表示される。"
      }
     ]
    },
-   "input_tokens": 7540,
-   "output_tokens": 147,
-   "seconds": 7.03
+   "input_tokens": 7596,
+   "output_tokens": 117,
+   "seconds": 6.15
   },
   {
    "persona": "sales-staff",
    "question": "見積を出した案件って、受注確度は何％で登録するんでしたっけ？",
    "context": [
-    "sales-crm-rules#11",
     "sales-crm-rules#9",
+    "sales-crm-rules#11",
     "sales-discount#5",
     "ga-benefits#8",
     "hr-telework#4",
@@ -2459,17 +2419,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "正式な見積を提出した案件は、「C 見積提示」として受注確度45%で登録します。[S2]",
+    "answer": "正式な見積を提出した案件は、ステージ「C 見積提示」、受注確度45%で登録します。[S1]",
     "citations": [
      {
-      "source": "S2",
-      "quote": "| C 見積提示 | 正式な見積を提出した | 45% |"
+      "source": "S1",
+      "quote": "C 見積提示 | 正式な見積を提出した | 45%"
      }
     ]
    },
-   "input_tokens": 7740,
+   "input_tokens": 7790,
    "output_tokens": 81,
-   "seconds": 7.11
+   "seconds": 5.1
   },
   {
    "persona": "sales-staff",
@@ -2486,21 +2446,17 @@
    ],
    "raw": {
     "found": true,
-    "answer": "受け取った日から3営業日以内にスキャンして顧客管理システムへ登録する必要があります。[S1]\n名刺の原本の扱いは文書管理規程によります。[S1]",
+    "answer": "受け取った日から3営業日以内にスキャンして顧客管理システムへ登録してください。[S1]",
     "citations": [
      {
       "source": "S1",
       "quote": "受け取った名刺は、受け取った日から3営業日以内にスキャンして顧客管理システムへ登録する。"
-     },
-     {
-      "source": "S1",
-      "quote": "名刺の原本の扱いは文書管理規程に、個人情報の扱い全般は個人情報取扱規程による。"
      }
     ]
    },
-   "input_tokens": 7646,
-   "output_tokens": 158,
-   "seconds": 7.51
+   "input_tokens": 7704,
+   "output_tokens": 92,
+   "seconds": 6.21
   },
   {
    "persona": "it-staff",
@@ -2511,18 +2467,18 @@
     "hr-resignation#2",
     "ga-benefits#10",
     "hr-commute-allowance#10",
-    "fin-travel#2",
     "hr-resignation#8",
-    "fin-travel#3"
+    "fin-travel#2",
+    "cmp-privacy#5"
    ],
    "raw": {
     "found": false,
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7648,
+   "input_tokens": 7788,
    "output_tokens": 30,
-   "seconds": 7.1
+   "seconds": 4.32
   },
   {
    "persona": "sales-staff",
@@ -2542,9 +2498,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7521,
+   "input_tokens": 7598,
    "output_tokens": 30,
-   "seconds": 5.28
+   "seconds": 4.3
   },
   {
    "persona": "dev-manager",
@@ -2564,9 +2520,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7793,
+   "input_tokens": 7862,
    "output_tokens": 30,
-   "seconds": 6.37
+   "seconds": 6.33
   },
   {
    "persona": "hr-staff",
@@ -2586,9 +2542,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7716,
+   "input_tokens": 7757,
    "output_tokens": 30,
-   "seconds": 9.35
+   "seconds": 4.63
   },
   {
    "persona": "it-staff",
@@ -2608,9 +2564,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7660,
+   "input_tokens": 7718,
    "output_tokens": 30,
-   "seconds": 7.58
+   "seconds": 4.49
   },
   {
    "persona": "acct-manager",
@@ -2622,17 +2578,17 @@
     "hr-side-job#3",
     "fin-payment-approval#7",
     "fin-payment-approval#3",
-    "fin-payment-approval#2",
-    "it-system-guide#4"
+    "fin-expense#4",
+    "fin-payment-approval#2"
    ],
    "raw": {
     "found": false,
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7714,
+   "input_tokens": 7799,
    "output_tokens": 30,
-   "seconds": 6.35
+   "seconds": 4.77
   },
   {
    "persona": "executive",
@@ -2652,9 +2608,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7797,
+   "input_tokens": 7836,
    "output_tokens": 30,
-   "seconds": 10.15
+   "seconds": 4.19
   },
   {
    "persona": "sales-staff",
@@ -2674,9 +2630,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7581,
+   "input_tokens": 7667,
    "output_tokens": 30,
-   "seconds": 6.34
+   "seconds": 4.84
   },
   {
    "persona": "dev-manager",
@@ -2696,9 +2652,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7730,
+   "input_tokens": 7803,
    "output_tokens": 30,
-   "seconds": 5.67
+   "seconds": 5.22
   },
   {
    "persona": "it-staff",
@@ -2718,21 +2674,21 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7783,
+   "input_tokens": 7803,
    "output_tokens": 30,
-   "seconds": 7.05
+   "seconds": 5.03
   },
   {
    "persona": "hr-staff",
    "question": "確定拠出年金の会社の掛金は月いくらですか？",
    "context": [
     "hr-payroll-ops#3",
-    "hr-payroll-ops#4",
     "hr-onboarding-ops#6",
+    "hr-payroll-ops#4",
     "hr-payroll-ops#9",
     "hr-payroll-ops#2",
     "hr-resignation#10",
-    "hr-telework#9",
+    "hr-onboarding-ops#3",
     "hr-annual-leave#2"
    ],
    "raw": {
@@ -2740,9 +2696,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7800,
+   "input_tokens": 8102,
    "output_tokens": 30,
-   "seconds": 8.82
+   "seconds": 5.01
   },
   {
    "persona": "acct-manager",
@@ -2762,9 +2718,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7721,
+   "input_tokens": 7777,
    "output_tokens": 30,
-   "seconds": 6.02
+   "seconds": 5.2
   },
   {
    "persona": "sales-staff",
@@ -2784,9 +2740,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7669,
+   "input_tokens": 7744,
    "output_tokens": 30,
-   "seconds": 5.48
+   "seconds": 5.02
   },
   {
    "persona": "dev-manager",
@@ -2806,9 +2762,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7671,
+   "input_tokens": 7697,
    "output_tokens": 30,
-   "seconds": 6.53
+   "seconds": 4.94
   },
   {
    "persona": "sales-staff",
@@ -2828,9 +2784,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7602,
+   "input_tokens": 7675,
    "output_tokens": 30,
-   "seconds": 6.92
+   "seconds": 4.71
   },
   {
    "persona": "it-staff",
@@ -2850,9 +2806,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7690,
+   "input_tokens": 7760,
    "output_tokens": 30,
-   "seconds": 6.9
+   "seconds": 4.7
   },
   {
    "persona": "dev-manager",
@@ -2864,17 +2820,17 @@
     "ga-disaster#8",
     "ga-benefits#10",
     "it-system-guide#14",
-    "ga-benefits#12",
-    "ga-benefits#11"
+    "ga-benefits#11",
+    "ga-benefits#12"
    ],
    "raw": {
     "found": false,
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7635,
+   "input_tokens": 7729,
    "output_tokens": 30,
-   "seconds": 6.99
+   "seconds": 4.1
   },
   {
    "persona": "executive",
@@ -2884,8 +2840,8 @@
     "ga-records#5",
     "cmp-harassment#8",
     "hr-resignation#8",
-    "hr-annual-leave#10",
     "hr-annual-leave#2",
+    "hr-annual-leave#10",
     "hr-annual-leave#3",
     "hr-annual-leave#11"
    ],
@@ -2894,9 +2850,9 @@
     "answer": "規程に記載がありません。",
     "citations": []
    },
-   "input_tokens": 7724,
+   "input_tokens": 7808,
    "output_tokens": 30,
-   "seconds": 6.47
+   "seconds": 6.68
   }
  ]
 }

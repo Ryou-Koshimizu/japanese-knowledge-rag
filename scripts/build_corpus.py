@@ -3,7 +3,8 @@
 実際の社内文書の形式の混在を再現するため、一部を PDF・Word・HTML に変換する。
 PDF は Chromium（Playwright）で印刷し、Word は python-docx で見出しスタイル付きで書く。
 
-    uv run python scripts/build_corpus.py
+    uv run python scripts/build_corpus.py                    # 文書と質問
+    uv run python scripts/build_corpus.py --questions-only   # 質問だけ
 """
 
 from __future__ import annotations
@@ -177,6 +178,9 @@ def merge_questions() -> None:
 
 
 def main() -> int:
+    if "--questions-only" in sys.argv:  # 文書（PDF・Word は作成日時が変わる）を作り直さない
+        merge_questions()
+        return 0
     if OUT.exists():
         for child in OUT.iterdir():
             if not child.name.startswith("_"):
