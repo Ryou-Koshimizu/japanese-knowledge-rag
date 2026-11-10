@@ -12,7 +12,7 @@ anyio==4.15.1
     #   httpx
     #   httpx2
     #   starlette
-certifi==2026.10.19
+certifi==2026.10.23
     # via
     #   httpcore
     #   httpx
@@ -20,7 +20,7 @@ click==8.5.0
     # via uvicorn
 docstring-parser==0.18.0
     # via anthropic
-fastapi==0.151.0
+fastapi==0.162.0
     # via japanese-knowledge-rag
 h11==0.16.0
     # via
@@ -29,11 +29,11 @@ h11==0.16.0
     #   uvicorn
 httpcore==1.0.9
     # via httpx
-httpcore2==2.15.1 ; sys_platform != 'emscripten'
+httpcore2==2.16.0 ; sys_platform != 'emscripten'
     # via httpx2
 httpx==0.28.1
     # via japanese-knowledge-rag
-httpx2==2.15.1
+httpx2==2.16.0
     # via anthropic
 httpx2-jsfetch==1.0 ; sys_platform == 'emscripten'
     # via httpx2
@@ -42,7 +42,7 @@ idna==3.20
     #   anyio
     #   httpx
     #   httpx2
-jiter==0.17.0
+jiter==0.18.0
     # via anthropic
 lxml==6.1.3
     # via python-docx
@@ -57,7 +57,7 @@ pydantic==2.14.1
     #   japanese-knowledge-rag
 pydantic-core==2.50.1
     # via pydantic
-pypdf==6.21.1
+pypdf==6.21.2
     # via japanese-knowledge-rag
 python-docx==1.2.0
     # via japanese-knowledge-rag
@@ -65,7 +65,7 @@ pyyaml==6.0.3
     # via japanese-knowledge-rag
 sniffio==1.3.1
     # via anthropic
-starlette==1.9.0
+starlette==1.10.0
     # via fastapi
 truststore==0.10.5 ; sys_platform != 'emscripten'
     # via
