@@ -46,7 +46,7 @@ jiter==0.17.0
     # via anthropic
 lxml==6.1.3
     # via python-docx
-opentelemetry-api==1.45.1
+opentelemetry-api==1.45.2
     # via
     #   anthropic
     #   fastapi
