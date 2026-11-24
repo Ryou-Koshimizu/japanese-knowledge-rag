@@ -6,21 +6,21 @@ annotated-types==0.8.0
     # via pydantic
 anthropic==1.15.0
     # via japanese-knowledge-rag
-anyio==4.15.1
+anyio==4.16.0
     # via
     #   anthropic
     #   httpx
     #   httpx2
     #   starlette
-certifi==2026.10.19
+certifi==2026.10.23
     # via
     #   httpcore
     #   httpx
-click==8.5.0
+click==8.5.1
     # via uvicorn
 docstring-parser==0.18.0
     # via anthropic
-fastapi==0.151.0
+fastapi==0.162.2
     # via japanese-knowledge-rag
 h11==0.16.0
     # via
@@ -29,11 +29,11 @@ h11==0.16.0
     #   uvicorn
 httpcore==1.0.9
     # via httpx
-httpcore2==2.15.1 ; sys_platform != 'emscripten'
+httpcore2==2.16.0 ; sys_platform != 'emscripten'
     # via httpx2
 httpx==0.28.1
     # via japanese-knowledge-rag
-httpx2==2.15.1
+httpx2==2.16.0
     # via anthropic
 httpx2-jsfetch==1.0 ; sys_platform == 'emscripten'
     # via httpx2
@@ -42,20 +42,20 @@ idna==3.20
     #   anyio
     #   httpx
     #   httpx2
-jiter==0.17.0
+jiter==0.19.0
     # via anthropic
 lxml==6.1.3
     # via python-docx
-opentelemetry-api==1.45.1
+opentelemetry-api==1.45.2
     # via
     #   anthropic
     #   fastapi
-pydantic==2.14.1
+pydantic==2.14.3
     # via
     #   anthropic
     #   fastapi
     #   japanese-knowledge-rag
-pydantic-core==2.50.1
+pydantic-core==2.50.4
     # via pydantic
 pypdf==6.21.1
     # via japanese-knowledge-rag
@@ -65,7 +65,7 @@ pyyaml==6.0.3
     # via japanese-knowledge-rag
 sniffio==1.3.1
     # via anthropic
-starlette==1.9.0
+starlette==1.10.0
     # via fastapi
 truststore==0.10.5 ; sys_platform != 'emscripten'
     # via
@@ -83,7 +83,7 @@ typing-extensions==4.16.0
     #   python-docx
     #   starlette
     #   typing-inspection
-typing-inspection==0.4.4
+typing-inspection==0.4.5
     # via
     #   fastapi
     #   pydantic
